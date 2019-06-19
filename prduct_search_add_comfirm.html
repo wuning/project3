@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+
+                    </button>
+                    <div class="logo text-center">
+                        
+                        <span>產品與行銷活動管理平臺</span>
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control" placeholder="搜尋整站...">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">我的首頁</a>
+                    </li>
+                    <li>
+                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true">產品目錄</a>
+                        <ul class="collapse list-unstyled in sub" id="productSubmenu">
+                            <li class="active">
+                                <a href="prduct_search.html">產品查詢</a>
+                            </li>
+                            <li>
+                                <a href="prduct_list.html">目錄清單</a>
+                            </li>
+                            <li>
+                                <a href="prduct_allView.html">產品單據總覽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#marketingSubmenu" data-toggle="collapse" aria-expanded="false">行銷活動</a>
+                        <ul class="collapse list-unstyled sub" id="marketingSubmenu">
+                            <li>
+                                <a href="marketing_proposalView.html">提案總覽</a>
+                            </li>
+                            <li>
+                                <a href="marketing_activeSearch.html">活動總覽</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#todoSubmenu" data-toggle="collapse" aria-expanded="false">待辦事項</a>
+                        <ul class="collapse list-unstyled sub" id="todoSubmenu">
+                            <li>
+                                <a href="toSignoff.html">待簽核項目</a>
+                            </li>
+                            <li>
+                                <a href="toDealwith.html">待處理事項</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="library.html">圖書館</a>
+                    </li>
+                    <li>
+                        <a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false">平台管理專區</a>
+                        <ul class="collapse list-unstyled sub" id="settingSubmenu">
+                            <li>
+                                <a href="admin.html">角色權限</a>
+                            </li>
+                            <li>
+                                <a href="bulletinSetting.html">佈告欄設定</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div class="Processpanel">
+                <div class="panelHeading">
+                    <div class="row nomargin dataHead">
+                        <a class="closeTop" href="#" data-toggle="modal" data-target="#saveList">
+                            <i class="glyphicon glyphicon-remove"></i>關閉</a>
+                        <div class="float-right">
+
+                            <button type="button" class="btn btn-default " onclick="{location.href='./prduct_search_add.html' }">
+                                返回上一步</button>
+
+
+                            <span class="borderRight"></span>
+                            <button type="button" class="btn btn-default " disabled>
+                                草稿轉移</button>
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#saveList">
+                                儲存</button>
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#tranList">
+                                傳送</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="main-content">
+
+                <div class="panel-body processing">
+                    <div class="title">
+                        <h1>新增產品</h1>
+
+                        <div class="statusBarWarp">
+                            <ul class="statusBar working">
+                                <li class="statusChecked">
+                                    <span class="statusBar-dot">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <p>填寫產品資訊</p>
+                                </li>
+                                <li>
+                                    <span class="statusBar-dot"></span>
+                                    <p>確認產品資訊</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="processingFormcard">
+                        <h3>玉山主峰 Mastercard 普卡</h3>
+                        <div class="dataForm">
+                            <div class="form-group">
+                                <span class=" form-titWidth">申請單號：</span>
+                                <span class="form-body">YYYYMMDDHHMMSS001</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">申請單位：</span>
+                                <span class="form-body">信用卡部</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">申請人：</span>
+                                <span class="form-body">蔡純淳 11427</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">產品說明：</span>
+                                <span class="form-body">玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。 其餘相關權益事項比照原有玉山主峰信用卡。 玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。
+                                    其餘相關權益事項比照原有玉山主峰信用卡。
+                                </span>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <h3>產品期限</h3>
+                        <div class="dataForm flex">
+                            <div class="form-group">
+                                <span class=" form-titWidth">產品上架日期：</span>
+                                <span class="form-body">2018/03/01</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">產品下架日期：</span>
+                                <span class="form-body">2018/03/01</span>
+                            </div>
+                        </div>
+                        <h3>產品狀態</h3>
+                        <div class="form-group">
+                            <div class="form-group">
+
+                                <span class=" form-titWidth">狀態說明：</span>
+                                <span class="form-body">正常上架</span>
+
+
+                            </div>
+                        </div>
+                        <h3>產品窗口</h3>
+                        <div class="form-group">
+
+
+                            <span class="form-body">蔡純淳 11427、葉佳緯 11426、黃明志 11793</span>
+
+
+                        </div>
+                        <hr />
+                        <h3>分層架構</h3>
+                        <div class="dataForm">
+                            <div class="form-group">
+                                <span class=" form-titWidth">行業：</span>
+                                <span class="form-body">BK 銀行</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">國家/地區：</span>
+                                <span class="form-body">TW 台灣</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">產品大類：</span>
+                                <span class="form-body">PM 支付</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">產品組：</span>
+                                <span class="form-body"> CDC 信用卡
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">基礎產品：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+
+                        </div>
+                        <hr />
+                        <h3>特定屬性</h3>
+                        <div class="dataForm">
+                            <div class="form-group">
+                                <span class=" form-titWidth">國際組織：</span>
+                                <span class="form-body">Mastercard</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">特殊卡種：</span>
+                                <span class="form-body">無</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">卡等：</span>
+                                <span class="form-body">C 普卡</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">發卡對象：</span>
+                                <span class="form-body"> CDC 信用卡
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">發卡對象限制：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">幣別：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">道路救援：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">機場貴賓室：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">電子票證功能：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">電子票證點數：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+                        </div>
+                        <div class="cardFormHead">合作團體 1</div>
+                        <div class="row nomargin ">
+
+                            <div class="dataForm">
+                                <div class="form-group">
+                                    <span class=" form-titWidth">合作團體：</span>
+                                    <span class="form-body">Mastercard</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">合作團體通路屬性：</span>
+                                    <span class="form-body">無</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">合作團體點數：</span>
+                                    <span class="form-body">C 普卡</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">合作團體會員卡：</span>
+                                    <span class="form-body"> CDC 其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                        使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">基本回饋：</span>
+                                    <span class="form-body">001 其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                        使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">分期優惠：</span>
+                                    <span class="form-body">001 銀行卡</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">支援行動支付：</span>
+                                    <span class="form-body">001 銀行卡</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">附加權益：</span>
+                                    <span class="form-body">001 銀行卡</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">忠誠計畫：</span>
+                                    <span class="form-body">001 銀行卡</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">原認同團體代碼：</span>
+                                    <span class="form-body">其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                        使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth"> 正卡年費標準：</span>
+                                    <span class="form-body">00其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                        使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">附卡年費標準：</span>
+                                    <span class="form-body">001 其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                        使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">首年年費方案：</span>
+                                    <span class="form-body">001 銀行卡</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">次年免年費標準：</span>
+                                    <span class="form-body">其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                        使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                    </span>
+                                </div>
+                                <!-- <div class="form-group row">
+                                        <span class=" form-titWidth">次年免年費標準：</span>
+                                        <span class="col-lg-10 nopadding">其餘信用卡免年費門檻 1.正附卡合併年度消費達門檻：玉山悠遊御璽卡/悠遊鈦金卡/JCB晶緻卡/台灣黑熊認同卡/eTag悠遊聯名卡/玉山御璽卡/玉山幸運PLUS鈦金卡滿3萬或6次以上則次年度免年費；玉山悠遊普卡滿1萬或2次以上則次年度免年費；
+                                            使用玉山帳戶自動扣繳信用卡款及帳單e化期間，享免年費優惠。 免年費門檻之消費計算不含：各類預借現金、代償、代收費用、各項作業/手續費、退款/退貨、掛失費、製卡費、年費、循環利息、服務成本、違約金、爭議款等非消費性款項，分期付款消費僅計首期次數並以全額累計。
+                                        </span>
+                                    </div> -->
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 傳送 -->
+    <div class="modal fade" id="tranList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">傳送審核人員</h2>
+                </div>
+                <div class="modal-body">
+                    <h3>玉山主峰 Mastercard 普卡</h3>
+                    <div class="dataForm">
+                        <div class="form-group">
+                            <span class=" form-titWidth">申請單號</span>
+                            <span class="form-body">YYYYMMDDHHMMSS001</span>
+                        </div>
+                        <div class="form-group">
+                            <span class=" form-titWidth">申請單位</span>
+                            <span class="form-body">信用卡部</span>
+                        </div>
+                        <div class="form-group">
+                            <span class=" form-titWidth">申請人</span>
+                            <span class="form-body">蔡純淳 11427</span>
+                        </div>
+                        <div class="form-group">
+                            <span class=" form-titWidth">產品說明</span>
+                            <span class="form-body">玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。 其餘相關權益事項比照原有玉山主峰信用卡。 玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。
+                                其餘相關權益事項比照原有玉山主峰信用卡。
+                            </span>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <div class="row">
+
+                        <div class=" col-xs-6">
+                            <span class="formLabel">簽核角色
+                                <span class="redText">*</span>
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+                        <div class=" col-xs-6">
+                            <span class="formLabel">簽核人員
+                                <span class="redText">*</span>
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+
+
+
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col-xs-12 ">
+                            <span class="formLabel">簽核意見
+
+                                <span class="Textnum">(0/100)</span>
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">傳送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 儲存 -->
+    <div class="modal fade" id="saveList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">是否儲存此次變更</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <h5>若不儲存，資料將不做任何保留</h5>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default float-left" data-dismiss="modal">不儲存直接離開</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $(".panel-body.processing").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+
+
+            });
+            // 固定header 
+            var height = $('.panelHeading').outerHeight();
+            $('.panel-body').css('margin-top', height + 0 + 'px');
+            $('.panel-body').css('height',
+                '100vh').css('height', `-=${height + 5 + 60}px`);
+            $(window).on('resize', function () {
+                var height = $('.panelHeading').outerHeight();
+                $('.panel-body').css('margin-top', height + 0 + 'px');
+                $('.panel-body').css('height', '100vh').css('height', `-=${height+
+5 + 60 }px`);
+            })
+
+        });
+    </script>
+</body>
+
+</html>

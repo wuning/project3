@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+
+                    </button>
+                    <div class="logo text-center">
+                        
+                        <span>產品與行銷活動管理平臺</span>
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control" placeholder="搜尋整站...">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">我的首頁</a>
+                    </li>
+                    <li>
+                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true">產品目錄</a>
+                        <ul class="collapse list-unstyled sub" id="productSubmenu">
+                            <li>
+                                <a href="prduct_search.html">產品查詢</a>
+                            </li>
+                            <li>
+                                <a href="prduct_list.html">目錄清單</a>
+                            </li>
+                            <li>
+                                <a href="prduct_allView.html">產品單據總覽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#marketingSubmenu" data-toggle="collapse" aria-expanded="false">行銷活動</a>
+                        <ul class="collapse list-unstyled in sub" id="marketingSubmenu">
+                            <li>
+                                <a href="marketing_proposalView.html">提案總覽</a>
+                            </li>
+                            <li class="active">
+                                <a href="marketing_activeSearch.html">活動總覽</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#todoSubmenu" data-toggle="collapse" aria-expanded="false">待辦事項</a>
+                        <ul class="collapse list-unstyled sub" id="todoSubmenu">
+                            <li>
+                                <a href="toSignoff.html">待簽核項目</a>
+                            </li>
+                            <li>
+                                <a href="toDealwith.html">待處理事項</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="library.html">圖書館</a>
+                    </li>
+                    <li>
+                        <a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false">平台管理專區</a>
+                        <ul class="collapse list-unstyled sub" id="settingSubmenu">
+                            <li>
+                                <a href="admin.html">角色權限</a>
+                            </li>
+                            <li>
+                                <a href="bulletinSetting.html">佈告欄設定</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div class="Processpanel">
+                <div class="panelHeading">
+                    <div class="row nomargin dataHead">
+                        <a class="closeTop" href="#" data-toggle="modal" data-target="#saveList">
+                            <i class="glyphicon glyphicon-remove"></i>關閉</a>
+                        <div class="float-right">
+
+                            <button type="button" class="btn btn-default " onclick="{location.href='./prduct_search_add.html' }">
+                                返回上一步</button>
+
+
+                            <span class="borderRight"></span>
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#saveList">
+                                預覽圖書館上架</button>
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#saveList">
+                                儲存</button>
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#tranpeopleList">
+                                傳送審核人員</button>
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#release">
+                                傳送放行人員</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="main-content">
+
+                <div class="panel-body processing">
+                    <div class="title">
+                        <h1>新增上架單</h1>
+
+                        <div class="statusBarWarp">
+                            <ul class="statusBar working">
+                                <li class="statusChecked">
+                                    <span class="statusBar-dot">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <p>填寫上架單資訊</p>
+                                </li>
+                                <li>
+                                    <span class="statusBar-dot"></span>
+                                    <p>確認上架單</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="processingFormcard special">
+
+                        <div class="processingFormcardWarp">
+                            <h3>玉山主峰 Mastercard 普卡</h3>
+                            <div class="dataForm">
+                                <div class="form-group">
+                                    <span class=" form-titWidth">申請單號：</span>
+                                    <span class="form-body">YYYYMMDDHHMMSS001</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">申請單位：</span>
+                                    <span class="form-body">信用卡部</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">申請人：</span>
+                                    <span class="form-body">蔡純淳 11427</span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">產品說明：</span>
+                                    <span class="form-body">玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。 其餘相關權益事項比照原有玉山主峰信用卡。 玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。
+                                        其餘相關權益事項比照原有玉山主峰信用卡。
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="BGWprocessingFormcard bggreen">
+                            <h3>活動執行成果說明</h3>
+
+                            <div class="row nomargin headForm">
+
+                                <div class="form-group col-xs-12 nopadding">
+                                    <div class="dataForm">
+
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提案單號：</span>
+                                            <span class="form-body">MP20170420001</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">行銷活動代碼：</span>
+                                            <span class="form-body">C0042017050201000000</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">速別：</span>
+                                            <span class="form-body">正常</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">圖書館上架：</span>
+                                            <span class="form-body"> 是
+                                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">活動變更狀態：</span>
+                                            <span class="form-body">處理中</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">活動變更次數：</span>
+                                            <span class="form-body">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="processingFormcardWarp">
+                            <div class="cardFormHead">活動起訖日</div>
+                            <h3 class="nomargin">活動起迄日</h3>
+                            <div class="dataForm flex">
+                                <div class="form-group">
+                                    <span class=" form-titWidth">產品上架日期：</span>
+                                    <span class="form-body">
+                                        <s>2018/03/01</s>
+                                        <span class="blueText">
+                                            2018/03/01</span>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">產品下架日期：</span>
+                                    <span class="form-body">
+                                        <s>2018/03/01</s>
+                                        <span class="blueText">
+                                            2018/03/01</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 class="nomargin">圖書館目前上架活動</h3>
+                            <div class="dataForm flex">
+                                <div class="form-group">
+                                    <span class=" form-titWidth">產品上架日期：</span>
+                                    <span class="form-body">
+                                        <s>2018/03/01</s>
+                                        <span class="blueText">
+                                            2018/03/01</span>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">產品下架日期：</span>
+                                    <span class="form-body">
+                                        <s>2018/03/01</s>
+                                        <span class="blueText">
+                                            2018/03/01</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr />
+                            <h3 class="nomargin">簽核設定</h3>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-6 nopadding">
+                                    <label class="formLabel">發卡對象限制
+                                        <span class="redText">*</span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男性
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女性
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-6 nopadding">
+                                    <label class="formLabel">發卡對象限制
+                                        <span class="redText">*</span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男性
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女性
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">基本回饋
+                                        <span class="redText">*</span>
+                                    </span>
+
+                                    <input type="text" class="form-control inputStyle" placeholder="請選擇(可複選)...">
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-6 nopadding">
+                                    <label class="formLabel">發卡對象限制
+                                        <span class="redText">*</span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男性
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女性
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    <!-- 儲存 -->
+    <div class="modal fade" id="saveList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">是否儲存此次變更</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <h5>若不儲存，資料將不做任何保留</h5>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default float-left" data-dismiss="modal">不儲存直接離開</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 傳送審核人員 -->
+    <div class="modal fade" id="tranpeopleList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">傳送審核人員</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                    <hr />
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-6 nopadding">
+                            <span class="formLabel">簽核角色
+                                <span class="redText">*</span>
+                            </span>
+                            <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                        </div>
+                        <div class="form-group col-xs-6 noRightpadding">
+                            <span class="formLabel">簽核人員
+                                <span class="redText">*</span>
+                            </span>
+                            <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                        </div>
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">簽核意見
+
+                                <span class="Textnum">(0/100)</span>
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">簽核附件
+
+
+                            </span>
+
+                            <a href="#" class="greenLink">
+                                <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                        </div>
+                    </div>
+                    <hr />
+                    <h5 class="redText">
+                        <i class="glyphicon glyphicon-warning-sign"></i>提醒您，如活動有其他單位進行活動預算分攤，請確認是否需要加會分攤單位</h5>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">傳送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 傳送放行人員 -->
+    <div class="modal fade" id="release" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">傳送放行人員</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                    <hr />
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-6 nopadding">
+                            <span class="formLabel">簽核角色
+                                <span class="redText">*</span>
+                            </span>
+                            <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                        </div>
+                        <div class="form-group col-xs-6 noRightpadding">
+                            <span class="formLabel">簽核人員
+                                <span class="redText">*</span>
+                            </span>
+                            <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                        </div>
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">簽核意見
+
+                                <span class="Textnum">(0/100)</span>
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">簽核附件
+
+
+                            </span>
+
+                            <a href="#" class="greenLink">
+                                <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">傳送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $(".panel-body.processing").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+
+
+            });
+            // 固定header 
+            var height = $('.panelHeading').outerHeight();
+            $('.panel-body').css('margin-top', height + 0 + 'px');
+            $('.panel-body').css('height',
+                '100vh').css('height', `-=${height + 5 + 60}px`);
+            $(window).on('resize', function () {
+                var height = $('.panelHeading').outerHeight();
+                $('.panel-body').css('margin-top', height + 0 + 'px');
+                $('.panel-body').css('height', '100vh').css('height', `-=${height+
+5 + 60 }px`);
+            })
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"> -->
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- select2 bs3 theme css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.css">
+
+    <!-- bootstrap datepicker css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
+    />
+
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="CustomizeSelect2.css">
+
+    <!-- <link rel="stylesheet" href="CustomizeDatatables.css"> -->
+    <link rel="stylesheet" href="CustomizeDatepicker.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scrollbar Custom CSS -->
+    <!-- jQuery CDN -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" integrity="sha256-ihAoc6M/JPfrIiIeayPE9xjin4UWjsx2mjW/rtmxLM4="
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- select2 js CDN -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script> -->
+
+    <!-- bootstrap datepicker js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- bootstrap datepicker i18n zh-tw -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+</head>
+
+<body>
+
+
+
+
+    <div class="data">
+        <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>產品上架日期</th>
+                    <th>產品狀態
+
+                    </th>
+                    <th>產品代碼</th>
+                    <th>產品名</th>
+                    <th>事業處</th>
+                    <th>產品窗口</th>
+                    <th>進行中之 行銷活動
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015/07/11</td>
+                    <td>該產品管制中</td>
+                    <td>BKTWPMCDC00120018</td>
+                    <td>玉山主峰 Mastercard 普卡</td>
+                    <td>信用卡部</td>
+                    <td>蔡純淳 11427</td>
+                    <td>3</td>
+                    <td>
+                        <button type="button" class=" btn-sm  btn-outline-primary " onclick="{location.href='./prduct_allView_data.html' }">檢視</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2015/07/11</td>
+                    <td>正常上架</td>
+                    <td>BKTWPMCDC00120018</td>
+                    <td>玉山主峰 Mastercard 普卡</td>
+                    <td>信用卡部</td>
+                    <td>蔡純淳 11427</td>
+                    <td>3</td>
+                    <td>
+                        <button type="button" class=" btn-sm  btn-outline-primary " onclick="{location.href='./prduct_search_Noraldata.html' }">檢視</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2015/07/11</td>
+                    <td>正常上架
+
+                    </td>
+                    <td>BKTWPMCDC00120018</td>
+                    <td>玉山主峰 Mastercard 普卡</td>
+                    <td>信用卡部</td>
+                    <td>蔡純淳 11427</td>
+                    <td>3</td>
+                    <td>
+                        <button type="button" class=" btn-sm btn-outline-primary ">檢視</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2015/07/11</td>
+                    <td>正常上架
+
+                    </td>
+                    <td>BKTWPMCDC00120018</td>
+                    <td>玉山主峰 Mastercard 普卡</td>
+                    <td>信用卡部</td>
+                    <td>蔡純淳 11427</td>
+                    <td>3</td>
+                    <td>
+                        <button type="button" class=" btn-sm btn-outline-primary ">檢視</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        $.fn.select2.amd.define('select2/selectAllAdapter', [
+            'select2/utils',
+            'select2/dropdown',
+            'select2/dropdown/attachBody',
+            'select2/selection/multiple'
+        ], function (Utils, Dropdown, AttachBody, MultipleSelection) {
+            function SelectAll() {}
+
+            SelectAll.prototype.render = function (decorated) {
+                var $rendered = decorated.call(this);
+                var self = this;
+
+                var $selectAll = $(
+                    '<button type="button">全選</button>'
+                );
+
+                var $cancelAll = $(
+                    '<button type="button">取消全選</button>'
+                );
+
+                var $container = $('.select2-container');
+                var $dropdown = $rendered.find('.select2-dropdown')
+
+                $dropdown.prepend($cancelAll);
+                $dropdown.prepend($selectAll);
+
+
+                $selectAll.on('click', function (e) {
+                    var $results = $rendered.find('.select2-results__option[aria-selected=false]');
+
+                    // Get all results that aren't selected
+                    $results.each(function () {
+                        var $result = $(this);
+
+                        // Get the data object for it
+                        var data = $result.data('data');
+
+                        // Trigger the select event
+                        self.trigger('select', {
+                            data: data
+                        });
+                    });
+
+                    self.trigger('close');
+                });
+
+                $cancelAll.on('click', function (e) {
+                    var $results = $rendered.find('.select2-results__option[aria-selected=true]');
+                    $results.each(function () {
+                        self.trigger('unselect', {
+                            data: $(this).data('data')
+                        });
+                    });
+                    self.trigger('close');
+                });
+                return $rendered;
+            };
+
+            Utils.appendMany = function ($element, $nodes) {
+                // jQuery 1.7.x does not support $.fn.append() with an array
+                // Fall back to a jQuery object collection using $.fn.add()
+                if ($.fn.jquery.substr(0, 3) === '1.7') {
+                    var $jqNodes = $();
+
+                    $.map($nodes, function (node) {
+                        $jqNodes = $jqNodes.add(node);
+                    });
+
+                    $nodes = $jqNodes;
+                }
+
+                $.map($nodes, function (node) {
+                    var tmp = node.text();
+
+                    if (tmp.length > 11) {
+                        tmp = tmp.substring(0, 9) + '...';
+                    } else {
+                        tmp = tmp.substring(0, tmp.length - 1);
+                    }
+
+                    var tmp1 = node.html().substring(node.html().indexOf('<'));
+                    node.html(tmp + tmp1);
+                });
+
+                $element.append($nodes);
+
+                /*
+                 * 當選擇的object數量會導致跨行時,將顯示內容改為 N selected 20180427 jeffHsu
+                 */
+                /*
+                if ($element.height() > 30) {
+                  $element.empty();
+                  var i = 0;
+                  $.map($nodes, function(node) {
+                    i++;
+                  });
+                  $element.append('<li class="select2-selection__choice" title="more" style="width: 85%">已選取' + i + "個項目</li>");
+                }*/
+
+            };
+
+            MultipleSelection.prototype.selectionContainer = function () {
+                var $container = $(
+                    '<li class="select2-selection__choice">' +
+                    '</li>'
+                );
+
+                return $container;
+            };
+
+            MultipleSelection.prototype.update = function (data) {
+                this.clear();
+
+                if (data.length === 0) {
+                    return;
+                }
+
+                var $selections = [];
+
+                for (var d = 0; d < data.length; d++) {
+                    var selection = data[d];
+
+                    var $selection = this.selectionContainer();
+                    var formatted = this.display(selection, $selection);
+
+                    $selection.append(formatted +
+                        '<span class="select2-selection__choice__remove" role="presentation">' +
+                        '&times;' +
+                        '</span>');
+                    $selection.prop('title', selection.title || selection.text);
+
+                    $selection.data('data', selection);
+
+                    $selections.push($selection);
+                }
+
+                var $rendered = this.$selection.find('.select2-selection__rendered');
+
+                Utils.appendMany($rendered, $selections);
+            };
+
+            return Utils.Decorate(
+                Utils.Decorate(
+                    Dropdown,
+                    AttachBody
+                ),
+                SelectAll
+            );
+        });
+    </script>
+
+    <script type="text/javascript">
+        $.fn.datepicker.dates['zh-TW'] = {
+            days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+            daysShort: ["週日", "週一", "週二",
+                "週三", "週四", "週五", "週六"
+            ],
+            daysMin: ["日", "一", "二", "三", "四", "五", "六"],
+            months: ["1月", "2月", "3月", "4月", "5月", "6月", "7月",
+                "8月", "9月", "10月", "11月", "12月"
+            ],
+            monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+            today: "今天",
+            format: "yyyy/mm/dd",
+            titleFormat: "yyyy年mm月",
+            weekStart: 1,
+            clear: "清除"
+        };
+
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+
+
+            });
+
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+
+            });
+
+            $('.single-select').select2({
+                theme: "bootstrap"
+            });
+
+            $('.multi-select').select2({
+                placeholder: '請選擇(可複選)...',
+                language: {
+                    noResults: function () {
+                        return "無相符項目";
+                    }
+                },
+                dropdownAdapter: $.fn.select2.amd.require('select2/selectAllAdapter')
+            });
+            $('#e2').select2({
+                closeOnSelect: false,
+                dropdownAdapter: $.fn.select2.amd.require('select2/selectAllAdapter'),
+
+            });
+            $('#btnSelect2').click(function () {
+                alert($('#e2').val());
+            });
+
+            $('.datepicker').datepicker();
+            // 固定header 
+            var height = $('.panelHeading').outerHeight();
+            $('.data').css('margin-top', height + 5 + 'px');
+            $('.data').css('height',
+                '100vh').css('height', `-=${height + 5 + 60}px`);
+            $(window).on('resize', function () {
+                var height = $('.panelHeading').outerHeight();
+                $('.data').css('margin-top', height + 5 + 'px');
+                $('.data').css('height', '100vh').css('height', `-=${height + 5 + 60 }px`);
+            })
+        });
+    </script>
+</body>
+
+</html>

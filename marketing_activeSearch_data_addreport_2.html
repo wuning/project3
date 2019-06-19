@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+
+                    </button>
+                    <div class="logo text-center">
+                        
+                        <span>產品與行銷活動管理平臺</span>
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control" placeholder="搜尋整站...">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">我的首頁</a>
+                    </li>
+                    <li>
+                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true">產品目錄</a>
+                        <ul class="collapse list-unstyled sub" id="productSubmenu">
+                            <li>
+                                <a href="prduct_search.html">產品查詢</a>
+                            </li>
+                            <li>
+                                <a href="prduct_list.html">目錄清單</a>
+                            </li>
+                            <li>
+                                <a href="prduct_allView.html">產品單據總覽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#marketingSubmenu" data-toggle="collapse" aria-expanded="false">行銷活動</a>
+                        <ul class="collapse list-unstyled in sub" id="marketingSubmenu">
+                            <li>
+                                <a href="marketing_proposalView.html">提案總覽</a>
+                            </li>
+                            <li class="active">
+                                <a href="marketing_activeSearch.html">活動總覽</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#todoSubmenu" data-toggle="collapse" aria-expanded="false">待辦事項</a>
+                        <ul class="collapse list-unstyled sub" id="todoSubmenu">
+                            <li>
+                                <a href="toSignoff.html">待簽核項目</a>
+                            </li>
+                            <li>
+                                <a href="toDealwith.html">待處理事項</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="library.html">圖書館</a>
+                    </li>
+                    <li>
+                        <a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false">平台管理專區</a>
+                        <ul class="collapse list-unstyled sub" id="settingSubmenu">
+                            <li>
+                                <a href="admin.html">角色權限</a>
+                            </li>
+                            <li>
+                                <a href="bulletinSetting.html">佈告欄設定</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div class="Processpanel">
+                <div class="panelHeading">
+                    <div class="row nomargin dataHead">
+                        <a class="closeTop" href="prduct_search.html">
+                            <i class="glyphicon glyphicon-remove"></i>關閉</a>
+                        <div class="float-right">
+
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#saveList">
+                                返回上一步</button>
+                            <span class="borderRight"></span>
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#saveList">
+                                儲存</button>
+                            <button type="button" class="btn btn-primary ">
+                                傳送審核人員</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="main-content">
+
+                <div class="panel-body processing">
+                    <div class="title">
+                        <h1>編輯活動結案報告</h1>
+                        <div class="statusBarWarp">
+                            <ul class="statusBar working">
+                                <li class="statusChecked">
+                                    <span class="statusBar-dot">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <p>填寫報告資訊</p>
+                                </li>
+                                <li>
+                                    <span class="statusBar-dot"></span>
+                                    <p>確認報告</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="BGWprocessingFormcard">
+
+
+                        <div class="row nomargin headForm">
+
+                            <div class="form-group col-xs-4 nopadding">
+                                <div class="dataForm">
+
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">提案單號：</span>
+                                        <span class="form-body">MP20170420001</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">行銷活動代碼：</span>
+                                        <span class="form-body">C0042017050201000000</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">速別：</span>
+                                        <span class="form-body">正常</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">圖書館上架：</span>
+                                        <span class="form-body"> 是
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">活動變更狀態：</span>
+                                        <span class="form-body">處理中</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">活動變更次數：</span>
+                                        <span class="form-body">0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cardFormHead hight">KPI 報表</div>
+
+
+                        <h3>預估關鍵績效指標 (KPI) 及達成說明</h3>
+                        <span class="BlueBGtag blue">有設定 KPI</span>
+                        <table class="table garytable">
+                            <thead>
+                                <th>項次</th>
+                                <th>事業處</th>
+                                <th>KPI 項目</th>
+                                <th>預期成果</th>
+                                <th>實際成果</th>
+                                <th>備註</th>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="cardFormHead hight">損益成效報表</div>
+
+
+                        <h3>收入</h3>
+
+                        <table class="table garytable">
+                            <thead>
+                                <th>項次</th>
+                                <th>項目</th>
+                                <th>金額</th>
+                                <th>備註</th>
+
+                            </thead>
+                            <tbody>
+
+
+                                <tr>
+                                    <td colspan="4" class="text-center garyText"> 尚無收入項目</td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+
+
+                        <h3>費用</h3>
+                        <table class="table garytable hight">
+                            <thead>
+                                <th>項次</th>
+                                <th>費用項目</th>
+                                <th class="textRight">預估支出</th>
+                                <th class="textRight">實際支出</th>
+                                <th>備註</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr class="active">
+                                    <td></td>
+
+                                    <td></td>
+                                    <td class="textRight">總計
+                                        <span class="textBlod">1,530,000 元</span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h3>分攤設定</h3>
+                        <table class="table garytable hight">
+                            <thead>
+                                <th>項次</th>
+                                <th>費用項目</th>
+                                <th class="textRight">預估支出</th>
+                                <th class="textRight">實際支出</th>
+                                <th>備註</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <h3>單位總支出</h3>
+                        <table class="table garytable hight">
+                            <thead>
+                                <th>項次</th>
+                                <th>費用項目</th>
+                                <th class="textRight">預估支出</th>
+                                <th class="textRight">實際支出</th>
+                                <th>備註</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>廣告費一</td>
+                                    <td class="textRight">1,100,000 元</td>
+                                    <td class="textRight">-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr class="active">
+                                    <td></td>
+
+                                    <td></td>
+                                    <td class="textRight">總計
+                                        <span class="textBlod">1,530,000 元</span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h3>損益</h3>
+                        <div class="dataForm">
+                            <span class="dataCard">
+                                <h5>損益</h5>
+                                <h1>$43,960,000</h1>
+                            </span>
+                            <span class="dataCardWarp">
+                                <i class="glyphicon glyphicon-arrow-up greenText"></i>
+                                <span class="dataCard">
+                                    <h5>實際收入</h5>
+                                    <h1>$43,960,000</h1>
+                                </span>
+                            </span>
+                            <span class="dataCardWarp">
+                                <i class="glyphicon glyphicon-arrow-down redText"></i>
+                                <span class="dataCard">
+
+                                    <h5>實際收入</h5>
+                                    <h1>$43,960,000</h1>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="cardFormHead hight">通路成效報表</div>
+
+
+
+                        <h3>單向簡訊</h3>
+                        <table class="table garytable">
+                            <thead>
+                                <th>項次</th>
+                                <th>事業處</th>
+                                <th>KPI 項目</th>
+                                <th>預期成果</th>
+                                <th>實際成果</th>
+                                <th>備註</th>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h3>雙向簡訊</h3>
+                        <table class="table garytable">
+                            <thead>
+                                <th>項次</th>
+                                <th>事業處</th>
+                                <th>KPI 項目</th>
+                                <th>預期成果</th>
+                                <th>實際成果</th>
+                                <th>備註</th>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h3>EDM</h3>
+                        <table class="table garytable">
+                            <thead>
+                                <th>項次</th>
+                                <th>事業處</th>
+                                <th>KPI 項目</th>
+                                <th>預期成果</th>
+                                <th>實際成果</th>
+                                <th>備註</th>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>金控總部整合行銷小組</td>
+                                    <td>回應率</td>
+                                    <td>50%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="BGWprocessingFormcard bggreen">
+                        <h3>活動執行成果說明</h3>
+                        <div class="row nomargin headForm">
+
+                            <div class="form-group col-xs-12 nopadding">
+                                <div class="dataForm">
+
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">提案單號：</span>
+                                        <span class="form-body">MP20170420001</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">行銷活動代碼：</span>
+                                        <span class="form-body">C0042017050201000000</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">速別：</span>
+                                        <span class="form-body">正常</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">圖書館上架：</span>
+                                        <span class="form-body"> 是
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">活動變更狀態：</span>
+                                        <span class="form-body">處理中</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">活動變更次數：</span>
+                                        <span class="form-body">0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="BGWprocessingFormcard">
+                        <h3 class="nomargin">簽核設定</h3>
+
+                        <div class="dataForm">
+
+                            <div class="form-group">
+                                <span class=" form-titWidth">決行層級：</span>
+                                <span class="form-body">一層決行(層峰主管)</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">設定層峰主管：</span>
+                                <span class="form-body">總經理</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">陳核會簽設定：</span>
+                                <span class="form-body">設定加會</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">加會單位部處：</span>
+                                <span class="form-body">法人金融事業處、CRV 小組
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 儲存 -->
+        <div class="modal fade" id="saveList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="modal-title" id="myModalLabel">是否儲存此次變更</h2>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <h5>若不儲存，資料將不做任何保留</h5>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default float-left" data-dismiss="modal">不儲存直接離開</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal">儲存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal-dark"
+                });
+                $(".panel-body.processing").mCustomScrollbar({
+                    theme: "minimal-dark"
+                });
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+
+
+                });
+                // 固定header 
+                var height = $('.panelHeading').outerHeight();
+                $('.panel-body').css('margin-top', height + 0 + 'px');
+                $('.panel-body').css('height',
+                    '100vh').css('height', `-=${height + 5 + 60}px`);
+                $(window).on('resize', function () {
+                    var height = $('.panelHeading').outerHeight();
+                    $('.panel-body').css('margin-top', height + 0 + 'px');
+                    $('.panel-body').css('height', '100vh').css('height', `-=${height+
+5 + 60 }px`);
+                })
+
+            });
+        </script>
+</body>
+
+</html>

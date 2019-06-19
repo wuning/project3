@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./Open_Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('./NotoSans-unhinted/NotoSans-Regular.ttf');
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 180px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: auto;
+    z-index: 999;
+    background: #E6E8EB;
+    color: #333333;
+    transition: all 0.3s;
+    overflow-y: auto;
+    bottom: 0;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar ul p {
+    color: #333333;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 0 0 0 20px;
+    font-size: 15px;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+
+#sidebar ul li a:hover {
+    color: #333333;
+    background: rgba(0, 173, 149, 0.2);
+}
+
+#sidebar ul li.active>a,
+.sub a[aria-expanded="true"] {
+    color: #333333;
+    background: #BAE8E2;
+    -webkit-box-shadow: inset 8px 0px 0px -1px rgba(0, 111, 117, 1);
+    -moz-box-shadow: inset 8px 0px 0px -1px rgba(0, 111, 117, 1);
+    box-shadow: inset 8px 0px 0px -1px rgba(0, 111, 117, 1);
+}
+
+#sidebar a[data-toggle="collapse"] {
+    position: relative;
+}
+
+#sidebar a[aria-expanded="false"]::before,
+#sidebar a[aria-expanded="true"]::before {
+    content: '\e258';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+#sidebar a[aria-expanded="true"]::before {
+    content: '\e259';
+}
+
+#sidebar ul ul a {
+    padding-left: 30px !important;
+    background: #E6E8EB;
+}
+
+#sidebar ul.CTAs {
+    padding: 20px;
+}
+
+#sidebar ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    #sidebar {
+        margin-left: -180px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 180px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

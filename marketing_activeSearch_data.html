@@ -1,0 +1,2730 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="CustomizeDatatables.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+
+                    </button>
+                    <div class="logo text-center">
+                        
+                        <span>產品與行銷活動管理平臺</span>
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control" placeholder="搜尋整站...">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">我的首頁</a>
+                    </li>
+                    <li>
+                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true">產品目錄</a>
+                        <ul class="collapse list-unstyled sub" id="productSubmenu">
+                            <li>
+                                <a href="prduct_search.html">產品查詢</a>
+                            </li>
+                            <li>
+                                <a href="prduct_list.html">目錄清單</a>
+                            </li>
+                            <li>
+                                <a href="prduct_allView.html">產品單據總覽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#marketingSubmenu" data-toggle="collapse" aria-expanded="false">行銷活動</a>
+                        <ul class="collapse list-unstyled sub in" id="marketingSubmenu">
+                            <li>
+                                <a href="marketing_proposalView.html">提案總覽</a>
+                            </li>
+                            <li class="active">
+                                <a href="marketing_activeSearch.html">活動總覽</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#todoSubmenu" data-toggle="collapse" aria-expanded="false">待辦事項</a>
+                        <ul class="collapse list-unstyled sub" id="todoSubmenu">
+                            <li>
+                                <a href="toSignoff.html">待簽核項目</a>
+                            </li>
+                            <li>
+                                <a href="toDealwith.html">待處理事項</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="library.html">圖書館</a>
+                    </li>
+                    <li>
+                        <a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false">平台管理專區</a>
+                        <ul class="collapse list-unstyled sub" id="settingSubmenu">
+                            <li>
+                                <a href="admin.html">角色權限</a>
+                            </li>
+                            <li>
+                                <a href="bulletinSetting.html">佈告欄設定</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div class="Processpanel fillform">
+                <div class="panelHeading">
+                    <div class="row nomargin dataHead">
+                        <a class="closeTop" href="#" data-toggle="modal" data-target="#saveList">
+                            <i class="glyphicon glyphicon-arrow-left"></i>返回上一頁</a>
+                        <div class="float-right">
+
+
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#DeletList">
+                                <i class="glyphicon glyphicon-eye-open"></i> 檢視原提案單</button>
+                            <button type="button" class="btn btn-default " onclick="{location.href='./marketing_activeSearch_data_edit.html' }">
+                                <i class="glyphicon glyphicon-plus"></i>新增變更單</button>
+                            <button type="button" class="btn btn-default " onclick="{location.href='./marketing_activeSearch_data_add.html' }">
+                                <i class="glyphicon glyphicon-plus"></i> 新增上架單</button>
+                        </div>
+                    </div>
+                    <div class="row nomargin ">
+                        <h2>2018 報稅整合行銷活動-玉山金彩稅月</h2>
+                        <ul class="nav nav-tabs greenTab" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#one" aria-controls="home" role="tab" data-toggle="tab">活動主檔</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#two" aria-controls="profile" role="tab" data-toggle="tab">活動變更單</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#three" aria-controls="messages" role="tab" data-toggle="tab">待處理事項</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#four" aria-controls="settings" role="tab" data-toggle="tab">活動執行申請</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#five" aria-controls="settings" role="tab" data-toggle="tab">活動執行進度</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#six" aria-controls="settings" role="tab" data-toggle="tab">活動上架</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#seven" aria-controls="settings" role="tab" data-toggle="tab">成效報表</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#eight" aria-controls="settings" role="tab" data-toggle="tab">結案報告</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="main-content">
+
+                <div class="panel-body processing">
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="one">
+                            <div class="BGWprocessingFormcard">
+                                <div class="row nomargin headForm">
+                                    <div class="form-group col-xs-4 nopadding">
+                                        <div class="dataForm">
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案單號：</span>
+                                                <span class="form-body">MP20170420001</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">行銷活動代碼：</span>
+                                                <span class="form-body">C0042017050201000000</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">速別：</span>
+                                                <span class="form-body">正常</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">圖書館上架：</span>
+                                                <span class="form-body"> 是
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更狀態：</span>
+                                                <span class="form-body">處理中</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更次數：</span>
+                                                <span class="form-body">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xs-6 nopadding">
+                                        <div class="dataForm">
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案單位：</span>
+                                                <span class="form-body">金控總部/總經理室/整合行銷小組</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案核准日：</span>
+                                                <span class="form-body">2018/3/10</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">專案負責人：</span>
+                                                <span class="form-body">蔡純淳 11427</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">經辦：</span>
+                                                <span class="form-body">王小明 08784
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">協辦單位：</span>
+                                                <span class="form-body">個人金融事業處, 財富管理事業處</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs  processTab" role="tablist">
+                                    <li role="presentation" class="tabContent active">
+                                        <a href="#oneone" aria-controls="home" role="tab" data-toggle="tab">活動內容</a>
+                                        <span class="processTabHead"></span>
+
+                                    </li>
+                                    <li role="presentation" class="tabContent">
+                                        <a href="#twotwo" aria-controls="profile" role="tab" data-toggle="tab">其他活動資訊</a>
+                                        <span class="processTabHead"></span>
+                                    </li>
+                                    <li role="presentation" class="tabContent">
+                                        <a href="#threethree" aria-controls="messages" role="tab" data-toggle="tab">活動預算 & KPI</a>
+                                        <span class="processTabHead"></span>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="oneone">
+
+                                    <div class="processingFormcard">
+                                        <h3>行銷活動資訊</h3>
+                                        <div class="row nomargin headForm">
+                                            <div class="form-group col-xs-12 nopadding">
+                                                <div class="dataForm">
+                                                    <div class="form-group">
+                                                        <span class=" form-titWidth">活動名稱：</span>
+                                                        <span class="form-body">2018 報稅整合行銷活動-玉山金彩稅月</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class=" form-titWidth">活動起迄日：</span>
+                                                        <span class="form-body">2018/05/01~2018/06/30</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class=" form-titWidth">活動主旨：</span>
+                                                        <span class="form-body">2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明2017報稅整合行銷活動-玉山金彩稅月行銷活動內容說明2017報稅整合行銷活動-玉山金彩稅月行銷活動內容說明
+                                                            ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018
+                                                            報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class=" form-titWidth">活動內容：</span>
+                                                        <span class="form-body"> 2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明2017報稅整合行銷活動-玉山金彩稅月行銷活動內容說明2017報稅整合行銷活動-玉山金彩稅月行銷活動內容說明
+                                                            ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018
+                                                            報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明
+                                                        </span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class=" form-titWidth">活動附件：</span>
+                                                        <span class="form-body">
+                                                            <span>
+                                                                <i class="glyphicon glyphicon-save-file"></i>
+                                                                <span class="fileForm">2018 報稅整合行銷活動-玉山金彩稅月簡章.pdf</span>
+                                                                <a href="#" class="greenLink">下載</a>
+                                                            </span>
+                                                            <br />
+                                                            <span>
+                                                                <i class="glyphicon glyphicon-save-file"></i>
+                                                                <span class="fileForm">報稅登記表.csv</span>
+                                                                <a href="#" class="greenLink">下載</a>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="twotwo">222</div>
+                                <div role="tabpanel" class="tab-pane " id="threethree">eeerrrr</div>
+                            </div>
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="two">
+
+                            <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>申請日期</th>
+                                        <th>單據狀態
+                                            <a href="#" data-toggle="modal" data-target="#staut">
+                                                <i class="glyphicon glyphicon-question-sign
+glyphicon glyphicon-info-sign"></i>
+                                            </a>
+                                        </th>
+                                        <th>單據狀態</th>
+                                        <th>申請單號</th>
+                                        <th>產品名稱</th>
+                                        <th>申請人</th>
+                                        <th>事業處 </th>
+                                        <th>處理角色</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架
+                                            <i class="glyphicon glyphicon-time yellowText"></i>
+                                        </td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <!-- Split button -->
+                                            <div class="btn-group">
+                                                <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./marketing_proposalView_data(processing)_change.html' }">檢視</button>
+                                                <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="#">檢視提案單</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架</td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <!-- Split button -->
+                                            <div class="btn-group">
+                                                <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./marketing_proposalView_data(processing)_change.html' }">檢視</button>
+                                                <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="#">檢視提案單</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架
+                                            <i class="glyphicon glyphicon-time yellowText"></i>
+                                        </td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <!-- Split button -->
+                                            <div class="btn-group">
+                                                <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./marketing_proposalView_data(processing)_change.html' }">檢視</button>
+                                                <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="#">檢視提案單</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架</td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <!-- Split button -->
+                                            <div class="btn-group">
+                                                <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./marketing_proposalView_data(processing)_change.html' }">檢視</button>
+                                                <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="#">檢視提案單</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="three">
+                            <div class="row nomargin dataHead bgBlue">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle noLeftpadding" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="true">
+                                        <h3>未完成</h3>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li>
+                                            <a href="#">未完成</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">已完成</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="float-right">
+                                    <div class="sortingBtn">
+                                        <span>排序</span>
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                提醒日(最近)
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li>
+                                                    <a href="#">未完成</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">已完成</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="borderRight"></span>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#addTodo">
+                                        <i class="glyphicon glyphicon-plus"></i>新增待處理事項</button>
+
+                                    <button type="button" class="btn" onclick="{location.href='./marketing_activeSearch_TodoHistory.html' }">
+                                        <i class="glyphicon glyphicon-time"></i>檢閱歷程</button>
+                                </div>
+                            </div>
+                            <div class="Formcard checkList">
+                                <input type="checkbox" data-toggle="tooltip" data-placement="top" title="標示為已完成">
+                                <div class="checkboxContent">
+
+
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提醒日：</span>
+                                            <span class="form-body">2018/02/24</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">經辦人員：</span>
+                                            <span class="form-body">葉坤昆08784</span>
+                                        </div>
+                                    </div>
+                                    <h4>代辦項目內容說明代辦項目內容說明代辦項目內容說明代辦項目內容代辦項目內容代辦項...</h4>
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="greenLink" data-toggle="modal" data-target="#editTodo">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#deletTodo">
+                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="Formcard checkList">
+                                <input type="checkbox" data-toggle="tooltip" data-placement="top" title="標示為已完成">
+
+                                <div class="checkboxContent">
+
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提醒日：</span>
+                                            <span class="form-body">2018/02/24</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">經辦人員：</span>
+                                            <span class="form-body">葉坤昆08784</span>
+                                        </div>
+                                    </div>
+                                    <h4>代辦項目內容說明代辦項目內容說明代辦項目內容說明代辦項目內容代辦項目內容代辦項...</h4>
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">備註：</span>
+                                            <span class="form-body">備註項目內容在這，備註項目內容在這備註項目內容在這備註項目內容在這備註項目內容在這。</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="greenLink" data-toggle="modal" data-target="#editTodo">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#deletTodo">
+                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="Formcard checkList">
+                                <input type="checkbox" data-toggle="tooltip" data-placement="top" title="標示為已完成">
+                                <div class="checkboxContent">
+
+
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提醒日：</span>
+                                            <span class="form-body">2018/02/24</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">經辦人員：</span>
+                                            <span class="form-body">葉坤昆08784</span>
+                                        </div>
+                                    </div>
+                                    <h4>代辦項目內容說明代辦項目內容說明代辦項目內容說明代辦項目內容代辦項目內容代辦項...</h4>
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="greenLink" data-toggle="modal" data-target="#editTodo">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#deletTodo">
+                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="Formcard checkList">
+                                <input type="checkbox" data-toggle="tooltip" data-placement="top" title="標示為已完成">
+
+                                <div class="checkboxContent">
+
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提醒日：</span>
+                                            <span class="form-body">2018/02/24</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">經辦人員：</span>
+                                            <span class="form-body">葉坤昆08784</span>
+                                        </div>
+                                    </div>
+                                    <h4>代辦項目內容說明代辦項目內容說明代辦項目內容說明代辦項目內容代辦項目內容代辦項...</h4>
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">備註：</span>
+                                            <span class="form-body">備註項目內容在這，備註項目內容在這備註項目內容在這備註項目內容在這備註項目內容在這。</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="greenLink" data-toggle="modal" data-target="#editTodo">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#deletTodo">
+                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="Formcard checkList">
+                                <input type="checkbox" data-toggle="tooltip" data-placement="top" title="標示為已完成">
+                                <div class="checkboxContent">
+
+
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提醒日：</span>
+                                            <span class="form-body">2018/02/24</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">經辦人員：</span>
+                                            <span class="form-body">葉坤昆08784</span>
+                                        </div>
+                                    </div>
+                                    <h4>代辦項目內容說明代辦項目內容說明代辦項目內容說明代辦項目內容代辦項目內容代辦項...</h4>
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="greenLink" data-toggle="modal" data-target="#editTodo">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#deletTodo">
+                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="Formcard checkList">
+                                <input type="checkbox">
+
+                                <div class="checkboxContent">
+
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">提醒日：</span>
+                                            <span class="form-body">2018/02/24</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">經辦人員：</span>
+                                            <span class="form-body">葉坤昆08784</span>
+                                        </div>
+                                    </div>
+                                    <h4>代辦項目內容說明代辦項目內容說明代辦項目內容說明代辦項目內容代辦項目內容代辦項...</h4>
+                                    <div class="dataForm flex">
+                                        <div class="form-group">
+                                            <span class=" form-titWidth">備註：</span>
+                                            <span class="form-body">備註項目內容在這，備註項目內容在這備註項目內容在這備註項目內容在這備註項目內容在這。</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="greenLink" data-toggle="modal" data-target="#editTodo">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#deletTodo">
+                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="four">
+                            <div class="row nomargin dataHead bgBlue">
+                                <h3>單據種類-系統串接</h3>
+                                <ul class="list-group apply flex">
+                                    <a href="#" data-toggle="modal" data-target="#applylist">
+                                        <li class="list-group-item shadow">行銷製作物流程單
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+
+
+                                </ul>
+
+                                <h4 class="iconTit">
+                                    請購單</h4>
+                                <ul class="list-group apply flex">
+                                    <a href="#">
+                                        <li class="list-group-item shadow">行銷製作物流程單
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+
+
+                                </ul>
+                                <h4 class="iconTit">
+                                    費用報支平台</h4>
+                                <ul class="list-group apply flex">
+                                    <a href="#">
+                                        <li class="list-group-item shadow">行銷製作物流程單
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPos" src="img/img_apply_app.png">
+                                        </li>
+                                    </a>
+
+
+                                </ul>
+                                <h3>單據種類-系統串接</h3>
+                                <ul class="list-group apply flex square">
+                                    <a href="#">
+                                        <li class="list-group-item shadow ">行銷製作物流程單
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow ">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow ">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow ">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link.png">
+                                        </li>
+                                    </a>
+
+
+
+                                </ul>
+                                <h4 class="iconTit">
+                                    請購單</h4>
+                                <ul class="list-group apply flex square">
+                                    <a href="#">
+                                        <li class="list-group-item shadow">行銷製作物流程單
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+
+
+                                </ul>
+                                <h4 class="iconTit">
+                                    請購單</h4>
+                                <ul class="list-group apply flex square">
+                                    <a href="#">
+                                        <li class="list-group-item shadow">行銷製作物流程單
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item shadow">UMO
+                                            <img class="imglogoPossquare" src="img/img_apply_link_multiple.png" style="height: 30px;    top: 18px;">
+                                        </li>
+                                    </a>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="five">
+                            <div class="row nomargin dataHead bgBlue">
+                                <h3>推廣方式</h3>
+                                <div class="dataForm">
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">申請單號：</span>
+                                        <span class="form-body">YYYYMMDDHHMMSS001</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">申請單位：</span>
+                                        <span class="form-body">信用卡部</span>
+                                    </div>
+                                </div>
+                                <h3>活動執行申請</h3>
+                            </div>
+                            <div class="Formcard nopadding nomargin">
+
+                                <table id="datatabletwo" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>申請日期</th>
+                                            <th>單據狀態
+
+                                            </th>
+                                            <th>單據狀態</th>
+                                            <th>申請單號</th>
+                                            <th>產品名稱</th>
+                                            <th>申請人</th>
+                                            <th>事業處 </th>
+                                            <th>處理角色</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架</td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架
+
+                                            </td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2015/07/11</td>
+                                            <td>正常上架</td>
+                                            <td>BKTWPMCDC00120018</td>
+                                            <td>玉山主峰 Mastercard 普卡</td>
+                                            <td>信用卡部</td>
+                                            <td>蔡純淳 11427</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Split button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class=" btn-sm leftbtn btn-outline-primary" onclick="{location.href='./html' }">檢視</button>
+                                                    <button type="button" class="btn-sm  btn-outline-primary dropdown-toggle nomargin" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="#">檢視提案單</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="six">
+
+                            <table id="datatableone" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>申請日期</th>
+                                        <th>單據狀態
+                                            <a href="#" data-toggle="modal" data-target="#staut">
+                                                <i class="glyphicon glyphicon-question-sign
+glyphicon glyphicon-info-sign"></i>
+                                            </a>
+                                        </th>
+                                        <th>單據狀態</th>
+                                        <th>申請單號</th>
+                                        <th>產品名稱</th>
+                                        <th>申請人</th>
+                                        <th>申請人員 </th>
+                                        <th>處理人員</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架
+                                            <i class="glyphicon glyphicon-time yellowText"></i>
+                                        </td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <button type="button" class=" btn-sm btn-outline-primary " onclick="{location.href='./marketing_proposalView_data(processing)onstore.html' }">檢視</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架</td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <button type="button" class=" btn-sm btn-outline-primary " onclick="{location.href='./ marketing_proposalView_data(processing)onstore.html' }">檢視</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架
+                                            <i class="glyphicon glyphicon-time yellowText"></i>
+                                        </td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <button type="button" class=" btn-sm btn-outline-primary " onclick="{location.href='./ marketing_proposalView_data(processing)onstore.html' }">檢視</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015/07/11</td>
+                                        <td>正常上架</td>
+                                        <td>BKTWPMCDC00120018</td>
+                                        <td>玉山主峰 Mastercard 普卡</td>
+                                        <td>信用卡部</td>
+                                        <td>蔡純淳 11427</td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>個金處
+                                            <br/>蔡純淳11427
+                                        </td>
+                                        <td>
+                                            <button type="button" class=" btn-sm btn-outline-primary " onclick="{location.href='./ marketing_proposalView_data(processing)onstore.html' }">檢視</button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="seven">
+
+                            <div class="Formcard nopadding nomargin">
+                                <ul class="nav nav-tabs  processTab" role="tablist">
+                                    <li role="presentation" class="tabContent active">
+                                        <a href="#oneoneone" aria-controls="home" role="tab" data-toggle="tab">KPI 成效報表
+
+                                        </a>
+                                        <span class="processTabHead"></span>
+                                    </li>
+                                    <li role="presentation" class="tabContent">
+                                        <a href="#twotwotwo" aria-controls="profile" role="tab" data-toggle="tab">損益成效報表 </a>
+                                        <span class="processTabHead"></span>
+                                    </li>
+                                    <li role="presentation" class="tabContent">
+                                        <a href="#threethreethree" aria-controls="messages" role="tab" data-toggle="tab">通路成效報表</a>
+                                        <span class="processTabHead"></span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="oneoneone">
+                                    <div class="row nomargin dataHead bgBlue">
+
+                                        <div class="float-right">
+
+
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./marketing_activeSearch_editKPI.html' }">
+                                                <i class="glyphicon glyphicon-pencil"></i>編輯 KPI 成效報表 </button>
+
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-print"></i>列印</button>
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-export"></i>匯出資料</button>
+                                        </div>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>預估關鍵績效指標 (KPI) 及達成說明</h3>
+                                        <span class="BlueBGtag blue">有設定 KPI</span>
+                                        <table class="table greentable">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>事業處</th>
+                                                <th>KPI 項目</th>
+                                                <th>預期成果</th>
+                                                <th>實際成果</th>
+                                                <th>備註</th>
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="twotwotwo">
+                                    <div class="row nomargin dataHead bgBlue">
+
+                                        <div class="float-right">
+
+
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./marketing_activeSearch_editProfit .html' }">
+                                                <i class="glyphicon glyphicon-pencil"></i>編輯損益成效報表 </button>
+
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-print"></i>列印</button>
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-export"></i>匯出資料</button>
+                                        </div>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>收入</h3>
+
+                                        <table class="table greentable">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>項目</th>
+                                                <th>金額</th>
+                                                <th>備註</th>
+
+                                            </thead>
+                                            <tbody>
+
+
+                                                <tr>
+                                                    <td colspan="4" class="text-center garyText"> 尚無收入項目</td>
+                                                </tr>
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>費用</h3>
+                                        <table class="table greentable hight">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>費用項目</th>
+                                                <th class="textRight">預估支出</th>
+                                                <th class="textRight">實際支出</th>
+                                                <th>備註</th>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td></td>
+
+                                                    <td></td>
+                                                    <td class="textRight">總計
+                                                        <span class="textBlod">1,530,000 元</span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>分攤設定</h3>
+                                        <table class="table greentable hight">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>費用項目</th>
+                                                <th class="textRight">預估支出</th>
+                                                <th class="textRight">實際支出</th>
+                                                <th>備註</th>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>單位總支出</h3>
+                                        <table class="table greentable hight">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>費用項目</th>
+                                                <th class="textRight">預估支出</th>
+                                                <th class="textRight">實際支出</th>
+                                                <th>備註</th>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>廣告費一</td>
+                                                    <td class="textRight">1,100,000 元</td>
+                                                    <td class="textRight">-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td></td>
+
+                                                    <td></td>
+                                                    <td class="textRight">總計
+                                                        <span class="textBlod">1,530,000 元</span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>損益</h3>
+                                        <span class="dataCard">
+                                            <h5>損益</h5>
+                                            <h1>$43,960,000</h1>
+                                        </span>
+                                        <span class="dataCardWarp">
+                                            <i class="glyphicon glyphicon-arrow-up greenText"></i>
+                                            <span class="dataCard">
+                                                <h5>實際收入</h5>
+                                                <h1>$43,960,000</h1>
+                                            </span>
+                                        </span>
+                                        <span class="dataCardWarp">
+                                            <i class="glyphicon glyphicon-arrow-down redText"></i>
+                                            <span class="dataCard">
+
+                                                <h5>實際收入</h5>
+                                                <h1>$43,960,000</h1>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="threethreethree">
+                                    <div class="row nomargin dataHead bgBlue">
+
+                                        <div class="float-right">
+
+
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./marketing_activeSearch_editPathway.html' }">
+                                                <i class="glyphicon glyphicon-pencil"></i>編輯通路成效報表 </button>
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-refresh"></i>更新資料</button>
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-print"></i>列印</button>
+                                            <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                                <i class="glyphicon glyphicon-export"></i>匯出資料</button>
+                                        </div>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>單向簡訊</h3>
+                                        <table class="table greentable">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>事業處</th>
+                                                <th>KPI 項目</th>
+                                                <th>預期成果</th>
+                                                <th>實際成果</th>
+                                                <th>備註</th>
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>雙向簡訊</h3>
+                                        <table class="table greentable">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>事業處</th>
+                                                <th>KPI 項目</th>
+                                                <th>預期成果</th>
+                                                <th>實際成果</th>
+                                                <th>備註</th>
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="Formcard">
+                                        <h3>EDM</h3>
+                                        <table class="table greentable">
+                                            <thead>
+                                                <th>項次</th>
+                                                <th>事業處</th>
+                                                <th>KPI 項目</th>
+                                                <th>預期成果</th>
+                                                <th>實際成果</th>
+                                                <th>備註</th>
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>金控總部整合行銷小組</td>
+                                                    <td>回應率</td>
+                                                    <td>50%</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="eight">
+                            <div class="BGWprocessingFormcard">
+                                <h2 class="nopadding">行銷活動結案報告
+                                    <div class="float-right">
+
+
+                                        <button type="button" class="btn greenLink" onclick="{location.href='./marketing_activeSearch_data_addreport.html' }">
+                                            <i class="glyphicon glyphicon-pencil"></i>編輯報告</button>
+
+                                        <button type="button" class="btn greenLink" onclick="{location.href='./prduct_search_add.html' }">
+                                            <i class="glyphicon glyphicon-print"></i>列印</button>
+                                        <span class="borderRight"></span>
+                                        <button type="button" class="btn btn-primary" onclick="{location.href='./prduct_search_add.html' }">
+                                            傳送審核人員</button>
+                                    </div>
+                                </h2>
+
+                                <div class="row nomargin headForm">
+
+                                    <div class="form-group col-xs-4 nopadding">
+                                        <div class="dataForm">
+
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案單號：</span>
+                                                <span class="form-body">MP20170420001</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">行銷活動代碼：</span>
+                                                <span class="form-body">C0042017050201000000</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">速別：</span>
+                                                <span class="form-body">正常</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">圖書館上架：</span>
+                                                <span class="form-body"> 是
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更狀態：</span>
+                                                <span class="form-body">處理中</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更次數：</span>
+                                                <span class="form-body">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xs-6 nopadding">
+                                        <div class="dataForm">
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案單位：</span>
+                                                <span class="form-body">金控總部/總經理室/整合行銷小組</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案核准日：</span>
+                                                <span class="form-body">2018/3/10</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">專案負責人：</span>
+                                                <span class="form-body">蔡純淳 11427</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">經辦：</span>
+                                                <span class="form-body">王小明 08784
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">協辦單位：</span>
+                                                <span class="form-body">個人金融事業處, 財富管理事業處</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <h3 class="BGBtit">KPI 報表
+
+                            </h3>
+                            <div class="Formcard">
+                                <h3>預估關鍵績效指標 (KPI) 及達成說明</h3>
+                                <span class="BlueBGtag blue">有設定 KPI</span>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>事業處</th>
+                                        <th>KPI 項目</th>
+                                        <th>預期成果</th>
+                                        <th>實際成果</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h3 class="BGBtit">損益成效報表
+                                <label class="switch" data-toggle="tooltip" data-placement="top" title="隱藏損益成效報表">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </h3>
+                            <div class="Formcard">
+                                <h3>收入</h3>
+
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>項目</th>
+                                        <th>金額</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr>
+                                            <td colspan="4" class="text-center garyText"> 尚無收入項目</td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+
+
+                                <h3>費用</h3>
+                                <table class="table greentable hight">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>費用項目</th>
+                                        <th class="textRight">預估支出</th>
+                                        <th class="textRight">實際支出</th>
+                                        <th>備註</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr class="active">
+                                            <td></td>
+
+                                            <td></td>
+                                            <td class="textRight">總計
+                                                <span class="textBlod">1,530,000 元</span>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <h3>分攤設定</h3>
+                                <table class="table greentable hight">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>費用項目</th>
+                                        <th class="textRight">預估支出</th>
+                                        <th class="textRight">實際支出</th>
+                                        <th>備註</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+
+                                <h3>單位總支出</h3>
+                                <table class="table greentable hight">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>費用項目</th>
+                                        <th class="textRight">預估支出</th>
+                                        <th class="textRight">實際支出</th>
+                                        <th>備註</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>廣告費一</td>
+                                            <td class="textRight">1,100,000 元</td>
+                                            <td class="textRight">-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr class="active">
+                                            <td></td>
+
+                                            <td></td>
+                                            <td class="textRight">總計
+                                                <span class="textBlod">1,530,000 元</span>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <h3>損益</h3>
+                                <span class="dataCard">
+                                    <h5>損益</h5>
+                                    <h1>$43,960,000</h1>
+                                </span>
+                                <span class="dataCardWarp">
+                                    <i class="glyphicon glyphicon-arrow-up greenText"></i>
+                                    <span class="dataCard">
+                                        <h5>實際收入</h5>
+                                        <h1>$43,960,000</h1>
+                                    </span>
+                                </span>
+                                <span class="dataCardWarp">
+                                    <i class="glyphicon glyphicon-arrow-down redText"></i>
+                                    <span class="dataCard">
+
+                                        <h5>實際收入</h5>
+                                        <h1>$43,960,000</h1>
+                                    </span>
+                                </span>
+                            </div>
+                            <h3 class="BGBtit">通路成效報表
+                                <label class="switch" data-toggle="tooltip" data-placement="top" title="隱藏通路成效報表">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </h3>
+                            <div class="Formcard">
+
+                                <h3>單向簡訊</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>事業處</th>
+                                        <th>KPI 項目</th>
+                                        <th>預期成果</th>
+                                        <th>實際成果</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <h3>雙向簡訊</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>事業處</th>
+                                        <th>KPI 項目</th>
+                                        <th>預期成果</th>
+                                        <th>實際成果</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <h3>EDM</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>事業處</th>
+                                        <th>KPI 項目</th>
+                                        <th>預期成果</th>
+                                        <th>實際成果</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="BGWprocessingFormcard bggreen">
+                                <h3>活動執行成果說明</h3>
+
+                                <div class="row nomargin headForm">
+
+                                    <div class="form-group col-xs-12 nopadding">
+                                        <div class="dataForm">
+
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案單號：</span>
+                                                <span class="form-body">MP20170420001</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">行銷活動代碼：</span>
+                                                <span class="form-body">C0042017050201000000</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">速別：</span>
+                                                <span class="form-body">正常</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">圖書館上架：</span>
+                                                <span class="form-body"> 是
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更狀態：</span>
+                                                <span class="form-body">處理中</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更次數：</span>
+                                                <span class="form-body">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="BGWprocessingFormcard">
+                                <h3>活動執行成果說明</h3>
+
+                                <div class="row nomargin headForm">
+
+                                    <div class="form-group col-xs-12 nopadding">
+                                        <div class="dataForm">
+
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">提案單號：</span>
+                                                <span class="form-body">MP20170420001</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">行銷活動代碼：</span>
+                                                <span class="form-body">C0042017050201000000</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">速別：</span>
+                                                <span class="form-body">正常</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">圖書館上架：</span>
+                                                <span class="form-body"> 是
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更狀態：</span>
+                                                <span class="form-body">處理中</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class=" form-titWidth">活動變更次數：</span>
+                                                <span class="form-body">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="Formcard">
+                                <h3>流程紀錄</h3>
+                                <table class="table greentable table-striped special processingTable">
+                                    <thead>
+                                        <th>處理狀態</th>
+                                        <th>事業處</th>
+                                        <th>KPI 項目</th>
+                                        <th>預期成果</th>
+                                        <th>實際成果</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="garyText">簽核意見:</td>
+                                            <td colspan="5">主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="garyText">簽核意見:</td>
+                                            <td colspan="5">主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內</td>
+                                        </tr>
+                                        <tr></tr>
+                                        <tr>
+
+                                            <td class="garyText">簽核附件:</td>
+                                            <td colspan="5">
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-paperclip"></i>參考簡章.pdf
+                                                    <a href="#" class="greenLink">下載</a>
+                                                </h5>
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-paperclip"></i>參考簡章.pdf
+                                                    <a href="#" class="greenLink">下載</a>
+                                                </h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 銷案 -->
+    <div class="modal fade" id="DeletList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">銷案</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <h3>玉山主峰 Mastercard 普卡</h3>
+                    <div class="dataForm">
+                        <div class="form-group">
+                            <span class=" form-titWidth">申請單號：</span>
+                            <span class="form-body">YYYYMMDDHHMMSS001</span>
+                        </div>
+                        <div class="form-group">
+                            <span class=" form-titWidth">申請單位：</span>
+                            <span class="form-body">信用卡部</span>
+                        </div>
+                        <div class="form-group">
+                            <span class=" form-titWidth">申請人：</span>
+                            <span class="form-body">蔡純淳 11427</span>
+                        </div>
+                        <div class="form-group">
+                            <span class=" form-titWidth">產品說明：</span>
+                            <span class="form-body">玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。 其餘相關權益事項比照原有玉山主峰信用卡。 玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。
+                                其餘相關權益事項比照原有玉山主峰信用卡。
+                            </span>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">銷案說明
+
+                                <span class="Textnum">(0/100)</span>
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" disabled>銷案</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 傳送 -->
+    <div class="modal fade" id="tranList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">傳送決行人員</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="processingFormcard">
+                        <h3>玉山主峰 Mastercard 普卡</h3>
+                        <div class="dataForm">
+                            <div class="form-group">
+                                <span class=" form-titWidth">申請單號</span>
+                                <span class="form-body">YYYYMMDDHHMMSS001</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">申請單位</span>
+                                <span class="form-body">信用卡部</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">申請人</span>
+                                <span class="form-body">蔡純淳 11427</span>
+                            </div>
+                            <div class="form-group">
+                                <span class=" form-titWidth">產品說明</span>
+                                <span class="form-body">玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。 其餘相關權益事項比照原有玉山主峰信用卡。 玉山主峰信用卡，基礎型銀行卡，新增發卡國際組織 JCB，增加行動支付功能。
+                                    其餘相關權益事項比照原有玉山主峰信用卡。
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class=" col-xs-6">
+                            <span class="formLabel">簽核角色
+                                <span class="redText">*</span>
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+                        <div class=" col-xs-6">
+                            <span class="formLabel">簽核人員
+                                <span class="redText">*</span>
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+
+
+
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col-xs-12 ">
+                            <span class="formLabel">簽核意見
+
+
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增待處理事項 -->
+    <div class="modal fade" id="addTodo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">新增待處理事項</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class=" col-xs-6 noRightpadding">
+                            <span class="formLabel">提醒日期
+                                <span class="redText">*</span>
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+
+
+                    </div>
+
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">行銷活動名稱
+
+
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">待處理事項
+                                <span class="redText">*</span>
+                                <span class="Textnum">(0/30)</span>
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">備註
+
+                                <span class="Textnum">(0/50)</span>
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 編輯待處理事項 -->
+    <div class="modal fade" id="editTodo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">編輯待處理事項</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class=" col-xs-6 noRightpadding">
+                            <span class="formLabel">簽核角色
+
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class=" col-xs-12 noRightpadding">
+                            <span class="formLabel">簽核角色
+
+                            </span>
+
+                            <input type="text" class="form-control inputStyle" value="TW 台灣">
+                        </div>
+
+                    </div>
+                    <div class="row nomargin">
+                        <div class="form-group col-xs-12 nopadding">
+                            <span class="formLabel">銷案說明
+
+                                <span class="Textnum">(0/100)</span>
+                            </span>
+
+                            <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 刪除待處理事項 -->
+    <div class="modal fade" id="deletTodo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title redText" id="myModalLabel">刪除此待處理事項</h2>
+                </div>
+                <div class="modal-body">
+                    <h5>是否確認刪除？此動作不可還原</h5>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 轉開單據成功 -->
+    <div class="modal fade" id="applylist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title " id="myModalLabel">轉開單據成功</h2>
+                </div>
+                <div class="modal-body">
+                    <h5>系統已自動為您轉開單據</h5>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">前往系統</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                "dom": "<'row'<'col-sm-12'tr>>" +
+                    "<'row inline-row'<'col inline-col'p><'col inline-col'l><'col inline-col'i>>",
+                "language": {
+                    "processing": "處理中...",
+                    "lengthMenu": "每頁顯示 _MENU_ ",
+                    "zeroRecords": "沒有匹配結果",
+                    "info": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 筆資料",
+                    "infoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+                    "infoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "infoPostFix": "",
+                    "search": "搜索:",
+                    "paginate": {
+                        "first": "首頁",
+                        "previous": "<",
+                        "next": ">",
+                        "last": "尾頁"
+                    }
+                }
+
+            });
+            $('#datatabletwo').DataTable({
+                "dom": "<'row'<'col-sm-12'tr>>" +
+                    "<'row inline-row'<'col inline-col'p><'col inline-col'l><'col inline-col'i>>",
+                "language": {
+                    "processing": "處理中...",
+                    "lengthMenu": "每頁顯示 _MENU_ ",
+                    "zeroRecords": "沒有匹配結果",
+                    "info": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 筆資料",
+                    "infoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+                    "infoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "infoPostFix": "",
+                    "search": "搜索:",
+                    "paginate": {
+                        "first": "首頁",
+                        "previous": "<",
+                        "next": ">",
+                        "last": "尾頁"
+                    }
+                }
+
+            });
+            $('#datatableone').DataTable({
+                "dom": "<'row'<'col-sm-12'tr>>" +
+                    "<'row inline-row'<'col inline-col'p><'col inline-col'l><'col inline-col'i>>",
+                "language": {
+                    "processing": "處理中...",
+                    "lengthMenu": "每頁顯示 _MENU_ ",
+                    "zeroRecords": "沒有匹配結果",
+                    "info": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 筆資料",
+                    "infoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+                    "infoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "infoPostFix": "",
+                    "search": "搜索:",
+                    "paginate": {
+                        "first": "首頁",
+                        "previous": "<",
+                        "next": ">",
+                        "last": "尾頁"
+                    }
+                }
+
+            });
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $(".panel-body.processing").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+
+            });
+
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+            // 固定header 
+            var height = $('.panelHeading').outerHeight();
+            $('.panel-body').css('margin-top', height + 0 + 'px');
+            $('.panel-body').css('height',
+                '100vh').css('height', `-=${height + 0 + 60}px`);
+            $(window).on('resize', function () {
+                var height = $('.panelHeading').outerHeight();
+                $('.panel-body').css('margin-top', height + 5 + 'px');
+                $('.panel-body').css('height', '100vh').css('height',
+                    `-=${height + 5 + 60 }px`);
+            })
+        });
+    </script>
+</body>
+
+</html>

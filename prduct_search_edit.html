@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+
+                    </button>
+                    <div class="logo text-center">
+                        
+                        <span>產品與行銷活動管理平臺</span>
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control" placeholder="搜尋整站...">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">我的首頁</a>
+                    </li>
+                    <li>
+                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true">產品目錄</a>
+                        <ul class="collapse list-unstyled in sub" id="productSubmenu">
+                            <li class="active">
+                                <a href="prduct_search.html">產品查詢</a>
+                            </li>
+                            <li>
+                                <a href="prduct_list.html">目錄清單</a>
+                            </li>
+                            <li>
+                                <a href="prduct_allView.html">產品單據總覽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#marketingSubmenu" data-toggle="collapse" aria-expanded="false">行銷活動</a>
+                        <ul class="collapse list-unstyled sub" id="marketingSubmenu">
+                            <li>
+                                <a href="marketing_proposalView.html">提案總覽</a>
+                            </li>
+                            <li>
+                                <a href="marketing_activeSearch.html">活動總覽</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#todoSubmenu" data-toggle="collapse" aria-expanded="false">待辦事項</a>
+                        <ul class="collapse list-unstyled sub" id="todoSubmenu">
+                            <li>
+                                <a href="toSignoff.html">待簽核項目</a>
+                            </li>
+                            <li>
+                                <a href="toDealwith.html">待處理事項</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="library.html">圖書館</a>
+                    </li>
+                    <li>
+                        <a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false">平台管理專區</a>
+                        <ul class="collapse list-unstyled sub" id="settingSubmenu">
+                            <li>
+                                <a href="admin.html">角色權限</a>
+                            </li>
+                            <li>
+                                <a href="bulletinSetting.html">佈告欄設定</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div class="Processpanel">
+                <div class="panelHeading">
+                    <div class="row nomargin dataHead">
+                        <a class="closeTop" href="prduct_search.html">
+                            <i class="glyphicon glyphicon-remove"></i>關閉</a>
+                        <div class="float-right">
+
+                            <button type="button" class="btn btn-default " disabled>
+                                草稿轉移</button>
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#saveList">
+                                儲存</button>
+                            <button type="button" class="btn btn-primary " onclick="{location.href='./prduct_search_edit(confirm).html' }">
+                                下一步：確認資訊</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="main-content">
+
+                <div class="panel-body processing">
+                    <div class="title">
+                        <h1>編輯產品</h1>
+
+                        <div class="statusBarWarp">
+                            <ul class="statusBar">
+                                <li>
+                                    <span class="statusBar-dot"></span>
+                                    <p>填寫產品資訊</p>
+                                </li>
+                                <li class="noStatus">
+                                    <span class="statusBar-dot"></span>
+                                    <p>確認產品資訊</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="processingFormcard">
+                        <div class="dataForm">
+                            <div class="form-group error">
+                                <span class=" form-titWidth">申請單號：</span>
+                                <span class="form-body">YYYYMMDDHHMMSS001</span>
+                            </div>
+                            <div class="form-group error">
+                                <span class=" form-titWidth">申請單位：</span>
+                                <span class="form-body">信用卡部</span>
+                            </div>
+                            <div class="form-group error">
+                                <span class=" form-titWidth">申請人：</span>
+                                <span class="form-body">蔡純淳 11427</span>
+                            </div>
+
+                        </div>
+                        <hr />
+                        <div class="row nomargin">
+                            <div class="row nomargin">
+                                <div class="form-group error col-xs-6 nopadding ">
+                                    <span class="formLabel">產品上架日期
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle  error" placeholder="請輸入...">
+                                    <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                        確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                        正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號
+                                    </div>
+                                </div>
+                                <div class="form-group error col-xs-6 noRightpadding ">
+                                    <span class="formLabel">產品下架日期
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle  error" placeholder="請輸入...">
+                                    <div class="error-msg">aaaaaaaaaaaadmaaaaaaaadmaaaaaaaadmaaaaaaaadmaaaaaaaadmaaaaaaaadmaaaaaaaadmqomomfoam magmapgmpagag,aoiaofaj
+                                        ofjao jpa</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">產品說明
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/500)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding ">
+                                <span class="formLabel">產品說明
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/500)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <h3>產品期限</h3>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">產品上架日期
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">12131314i104i018401340347319847319 ujiuhihighsihgish ighsi gish ihi我我我我我我</div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">產品下架日期
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <h3>產品狀態</h3>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">狀態說明
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">狀態說明
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <h3>產品窗口</h3>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">窗口
+                                    <span class="Textnum">(0/30)</span>
+                                </span>
+
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入（最多30字）...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">窗口
+                                    <span class="Textnum">(0/30)</span>
+                                </span>
+
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入（最多30字）...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <h3>分層架構</h3>
+                        <div class="dataForm">
+                            <div class="form-group error">
+                                <span class=" form-titWidth">行業：</span>
+                                <span class="form-body">BK 銀行</span>
+                            </div>
+                            <div class="form-group error">
+                                <span class=" form-titWidth">國家/地區：</span>
+                                <span class="form-body">TW 台灣</span>
+                            </div>
+                            <div class="form-group error">
+                                <span class=" form-titWidth">產品大類：</span>
+                                <span class="form-body">PM 支付</span>
+                            </div>
+                            <div class="form-group error">
+                                <span class=" form-titWidth">產品組：</span>
+                                <span class="form-body"> CDC 信用卡
+                                </span>
+                            </div>
+                            <div class="form-group error">
+                                <span class=" form-titWidth">基礎產品：</span>
+                                <span class="form-body">001 銀行卡</span>
+                            </div>
+
+                        </div>
+                        <hr />
+                        <h3>特定屬性</h3>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">國際組織
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">國際組織
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">特殊卡種
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">JJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJJJIJIJIJIWJODOJOJWOJDOWJDOJ
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">特殊卡種
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">卡等
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">卡等
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <label class="formLabel">發卡對象
+                                    <span class="redText">*</span>
+                                </label>
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 自然人
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 法人
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                </label>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <label class="formLabel">發卡對象
+                                    <span class="redText">*</span>
+                                </label>
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 自然人
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 法人
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                </label>
+                                <div class="error-msg">ALLLLLLLLLLLLLLLLLLLKWIEOIEIHWIUEHUYEGHUEUYEGH@U URBURB U RIRB FUB UHU IFHIH IFHIHFIHIHIUFHIUH
+                                    IFHUIH IUHFUI HFH 121132314144
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <label class="formLabel">發卡對象限制
+                                    <span class="redText">*</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男性
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女性
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                </label>
+                                <div class="error-msg">ALLLLLLLLLLLLLLLLLLLKWIEOIEIHWIUEHUYEGHUEUYEGH@U URBURB U RIRB FUB UHU IFHIH IFHIHFIHIHIUFHIUH
+                                    IFHUIH IUHFUI HFH 121132314144
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <label class="formLabel">發卡對象限制
+                                    <span class="redText">*</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男性
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女性
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 不限
+                                </label>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一 編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正
+                                    確統一編號請輸入正確統
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">幣別
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">幣別
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">電子票證功能
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">電子票證功能
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">電子票證點數
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">電子票證點數
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <div class="cardFormHead">合作團體 1</div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <div class="cardFormHead">合作團體 1</div>
+                            </div>
+                            <div class="form-group error col-xs-5 nopadding">
+
+                                <span class="formLabel">合作團體
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-1 nopadding"></div>
+                            <div class="form-group error col-xs-5 noRightpadding">
+
+                                <span class="formLabel">合作團體
+                                    <span class="redText">*</span>
+                                </span>
+                                <input type="text" class="form-control inputStyle error" placeholder="請輸入...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-1 nopadding"></div>
+                        </div>
+
+
+
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-5 nopadding">
+                                <span class="formLabel">合作團體點數
+
+                                    <span class="Textnum">(0/200)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(最多 200 字)…"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+
+                            <div class="form-group error col-xs-1 noRightpadding">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-trash redText"></i>
+                                </a>
+                            </div>
+
+                            <div class="form-group error col-xs-5 noRightpadding">
+                                <span class="formLabel">合作團體點數
+
+                                    <span class="Textnum">(0/200)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(最多 200 字)…"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-1 noRightpadding">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-trash redText"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-5 nopadding">
+                                <span class="formLabel">合作團體會員卡
+
+                                    <span class="Textnum">(0/200)</span>
+                                </span>
+
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(最多 200 字)…"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-1 nopadding"></div>
+                            <div class="form-group error col-xs-5 noRightpadding">
+                                <span class="formLabel">合作團體會員卡
+
+                                    <span class="Textnum">(0/200)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(最多 200 字)…"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-1 nopadding"></div>
+                        </div>
+
+                        <hr />
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <a class="greenLink" href="#">
+                                    <i class="glyphicon glyphicon-plus"></i>新增合作團體</a>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <a class="greenLink" href="#">
+                                    <i class="glyphicon glyphicon-plus"></i>新增合作團體</a>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">基本回饋
+                                    <span class="redText">*</span>
+                                </span>
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">基本回饋
+                                    <span class="redText">*</span>
+                                </span>
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <label class="formLabel">有無分期優惠
+                                    <span class="redText">*</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 有
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 無
+                                </label>
+
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <label class="formLabel">有無分期優惠
+                                    <span class="redText">*</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 有
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 無
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">支援行動支付
+                                    <span class="redText">*</span>
+                                </span>
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">支援行動支付
+                                    <span class="redText">*</span>
+                                </span>
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">附加權益
+                                    <span class="redText">*</span>
+                                </span>
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">附加權益
+                                    <span class="redText">*</span>
+                                </span>
+
+                                <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <label class="formLabel">忠誠計畫
+                                    <span class="redText">*</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 有
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 無
+                                </label>
+
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <label class="formLabel">忠誠計畫
+                                    <span class="redText">*</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 有
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 無
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">原認同團體代碼
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/200)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">原認同團體代碼
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/200)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">正卡年費標準
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">正卡年費標準
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">副卡年費標準
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">副卡年費標準
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">首年年費方案
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">首年年費方案
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row nomargin">
+                            <div class="form-group error col-xs-6 nopadding">
+                                <span class="formLabel">次年免年費標準
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                            <div class="form-group error col-xs-6 noRightpadding">
+                                <span class="formLabel">次年免年費標準
+                                    <span class="redText">*</span>
+                                    <span class="Textnum">(0/300)</span>
+                                </span>
+
+                                <textarea type="text" class="form-control inputStyle error" rows="4" placeholder="請輸入(若無請填寫無)"></textarea>
+                                <div class="error-msg">請輸入正確統一編號請輸入正確統一編號請輸入正確統 一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入正確統一編號請輸入
+                                    正確統一編號請輸入正確統一編號請輸入正確統一編 號請輸入正
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row nomargin">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked>加會其他單位
+                                </label>
+                            </div>
+
+                            <table class="table greentable">
+                                <thead>
+                                    <th>加會單位</th>
+                                    <th>加會人員</th>
+                                    <th></th>
+
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-6">
+                                            <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                            <div class="error-msg">請輸入正確統一編號請輸請輸入正確統一編號請輸
+                                            </div>
+                                        </td>
+                                        <td class="col-md-6">
+                                            <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                            <div class="error-msg">請輸入正確統一編號請輸請輸入正確統一編號請輸
+                                            </div>
+                                        </td>
+                                        <td class="deletInTable">
+                                            <a href="#">
+                                                <i class="glyphicon glyphicon-trash redText"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-6">
+                                            <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                            <div class="error-msg">請輸入正確統一編號請輸請輸入正確統一編號請輸請輸入正確統一編號請輸請輸入正確統一編號請輸請輸入正確統一編號請輸請輸入正確統一編號請輸
+                                            </div>
+                                        </td>
+                                        <td class="col-md-6">
+                                            <input type="text" class="form-control inputStyle error" placeholder="請選擇(可複選)...">
+                                            <div class="error-msg">su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3su3cl3
+
+                                            </div>
+                                        </td>
+                                        <td class="deletInTable">
+                                            <a href="#">
+                                                <i class="glyphicon glyphicon-trash redText"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <hr />
+                            <div class="row nomargin">
+                                <div class="form-group error col-xs-6 nopadding">
+                                    <a class="greenLink" href="#">
+                                        <i class="glyphicon glyphicon-plus"></i>新增加會單位</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- 儲存 -->
+    <div class="modal fade" id="saveList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">是否儲存此次變更</h2>
+                </div>
+                <div class="modal-body">
+
+
+                    <h5>若不儲存，資料將不做任何保留</h5>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default float-left" data-dismiss="modal">不儲存直接離開</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $(".panel-body.processing").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+
+
+            });
+            // 固定header 
+            var height = $('.panelHeading').outerHeight();
+            $('.panel-body').css('margin-top', height + 0 + 'px');
+            $('.panel-body').css('height',
+                '100vh').css('height', `-=${height + 5 + 60}px`);
+            $(window).on('resize', function () {
+                var height = $('.panelHeading').outerHeight();
+                $('.panel-body').css('margin-top', height + 0 + 'px');
+                $('.panel-body').css('height', '100vh').css('height', `-=${height+
+5 + 60 }px`);
+            })
+
+        });
+    </script>
+</body>
+
+</html>

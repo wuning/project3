@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>project3</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" href="CustomizeSidemenu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- datatables CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--  datatables js -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+
+                    </button>
+                    <div class="logo text-center">
+                        
+                        <span>產品與行銷活動管理平臺</span>
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control" placeholder="搜尋整站...">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">我的首頁</a>
+                    </li>
+                    <li>
+                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true">產品目錄</a>
+                        <ul class="collapse list-unstyled  sub" id="productSubmenu">
+                            <li>
+                                <a href="prduct_search.html">產品查詢</a>
+                            </li>
+                            <li>
+                                <a href="prduct_list.html">目錄清單</a>
+                            </li>
+                            <li>
+                                <a href="prduct_allView.html">產品單據總覽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#marketingSubmenu" data-toggle="collapse" aria-expanded="false">行銷活動</a>
+                        <ul class="collapse list-unstyled in sub" id="marketingSubmenu">
+                            <li class="active">
+                                <a href="marketing_proposalView.html">提案總覽</a>
+                            </li>
+                            <li>
+                                <a href="marketing_activeSearch.html">活動總覽</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#todoSubmenu" data-toggle="collapse" aria-expanded="false">待辦事項</a>
+                        <ul class="collapse list-unstyled sub" id="todoSubmenu">
+                            <li>
+                                <a href="toSignoff.html">待簽核項目</a>
+                            </li>
+                            <li>
+                                <a href="toDealwith.html">待處理事項</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="library.html">圖書館</a>
+                    </li>
+                    <li>
+                        <a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false">平台管理專區</a>
+                        <ul class="collapse list-unstyled sub" id="settingSubmenu">
+                            <li>
+                                <a href="admin.html">角色權限</a>
+                            </li>
+                            <li>
+                                <a href="bulletinSetting.html">佈告欄設定</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div class="Processpanel fillform">
+                <div class="panelHeading">
+                    <div class="row nomargin dataHead">
+                        <a class="closeTop" href="marketing_proposalView.html">
+                            <i class="glyphicon glyphicon-arrow-left"></i>返回上一頁</a>
+                        <div class="float-right">
+
+                            <button type="button" class="btn btn-default " onclick="{location.href='./marketing_proposalView_data(processing)_print.html' }">
+                                <i class="glyphicon glyphicon-print"></i>列印</button>
+                            <span class="borderRight"></span>
+
+                            <button type="button" class="btn btn-default " data-toggle="modal" data-target="#backTo">
+                                傳至原單位經辦</button>
+
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#tranpeopleList">
+                                傳送審核人員</button>
+
+
+                        </div>
+                    </div>
+                    <div class="row nomargin headingForm">
+                        <h3>2018 報稅整合行銷活動-玉山金彩稅月
+                            <span class="tag process orange">處理中｜加會分派</span>
+
+                        </h3>
+                        <div class="dataForm row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <span class=" form-titWidth">提案單號</span>
+                                    <span class="form-body">MP20170420001
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">行銷活動代碼</span>
+                                    <span class="form-body">
+                                        <u>C0042017050201000000</u>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">速別</span>
+                                    <span class="form-body">正常
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">圖書館上架</span>
+                                    <span class="form-body">是
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    <span class=" form-titWidth">提案單位</span>
+                                    <span class="form-body">金控總部/總經理室/整合行銷小組
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">申請日期</span>
+                                    <span class="form-body">2018/3/10
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">專案負責人</span>
+                                    <span class="form-body">蔡純淳 11427
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">經辦</span>
+                                    <span class="form-body">王小明 08784
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <span class=" form-titWidth">協辦單位</span>
+                                    <span class="form-body">個人金融事業處, 財富管理事業處
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Formcard nopadding nomargin">
+                            <ul class="nav nav-tabs  processTab" role="tablist">
+                                <li role="presentation" class="tabContent active">
+                                    <a href="#oneoneone" aria-controls="home" role="tab" data-toggle="tab">活動內容
+
+                                    </a>
+                                    <span class="processTabHead"></span>
+                                </li>
+                                <li role="presentation" class="tabContent">
+                                    <a href="#twotwotwo" aria-controls="profile" role="tab" data-toggle="tab">其他活動資訊 </a>
+                                    <span class="processTabHead"></span>
+                                </li>
+                                <li role="presentation" class="tabContent">
+                                    <a href="#threethreethree" aria-controls="messages" role="tab" data-toggle="tab">活動預算 & KPI</a>
+                                    <span class="processTabHead"></span>
+                                </li>
+                                <li role="presentation" class="tabContent">
+                                    <a href="#forfor" aria-controls="profile" role="tab" data-toggle="tab">簽核設定 </a>
+                                    <span class="processTabHead"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="main-content">
+
+                <div class="panel-body processing">
+
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="oneoneone">
+                            <div class="processingFormcard">
+                                <h2 class="nopadding">行銷活動資訊
+
+                                </h2>
+                                <div class="dataForm">
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">活動名稱：</span>
+                                        <span class="form-body">2018 報稅整合行銷活動-玉山金彩稅月</span>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">活動起迄日：</span>
+                                        <span class="form-body">2018/05/01~2018/06/30</span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">活動主旨：</span>
+                                        <span class="form-body">2018 報稅整合行銷活動-玉山金彩稅月行銷活動主旨說明2017報稅整合行銷活動-玉山金彩稅月行銷活動主旨說明2017報稅整合行銷活動-玉山金彩稅月行銷活動主旨說明</span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">活動內容：</span>
+                                        <span class="form-body">2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明2017報稅整合行銷活動-玉山金彩稅月行銷活動內容說明2017報稅整合行銷活動-玉山金彩稅月行銷活動內容說明
+                                            ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明
+                                            ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明 ・2018 報稅整合行銷活動-玉山金彩稅月行銷活動內容說明</span>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">
+                                            活動附件：
+                                        </span>
+                                        <span class="form-body">
+                                            <i class="glyphicon glyphicon-paperclip"></i>參考簡章.pdf
+                                            <a href="#" class="greenLink">下載</a>
+                                            <br />
+
+                                            <i class="glyphicon glyphicon-paperclip"></i>參考簡章.pdf
+                                            <a href="#" class="greenLink">下載</a>
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="processingFormcard">
+                                <h3>流程紀錄</h3>
+                                <table class="table greentable table-striped special processingTable">
+                                    <thead>
+                                        <th>處理狀態</th>
+                                        <th>事業處</th>
+                                        <th>KPI 項目</th>
+                                        <th>預期成果</th>
+                                        <th>實際成果</th>
+                                        <th>備註</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="garyText">簽核意見:</td>
+                                            <td colspan="5">主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>金控總部整合行銷小組</td>
+                                            <td>回應率</td>
+                                            <td>50%</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="garyText">簽核意見:</td>
+                                            <td colspan="5">主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內，主管簽核意見說明限百字以內</td>
+                                        </tr>
+                                        <tr></tr>
+                                        <tr>
+
+                                            <td class="garyText">簽核附件:</td>
+                                            <td colspan="5">
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-paperclip"></i>參考簡章.pdf
+                                                    <a href="#" class="greenLink">下載</a>
+                                                </h5>
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-paperclip"></i>參考簡章.pdf
+                                                    <a href="#" class="greenLink">下載</a>
+                                                </h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="processingFormcard">
+                                <h3>變更清單</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>處理狀態</th>
+                                        <th>核准日期</th>
+                                        <th>所屬部門</th>
+                                        <th>申請人員</th>
+                                        <th>變更單號</th>
+                                        <th>變更項目</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>已完成</td>
+                                            <td>2018/3/20</td>
+                                            <td>整合行銷小組</td>
+                                            <td>林克 08784</td>
+                                            <td>
+                                                <u>MC20170318001</u>
+                                            </td>
+                                            <td>活動起迄日</td>
+                                        </tr>
+                                        <tr>
+                                            <td>已完成</td>
+                                            <td>2018/3/20</td>
+                                            <td>整合行銷小組</td>
+                                            <td>林克 08784</td>
+                                            <td>
+                                                <u>MC20170318001</u>
+                                            </td>
+                                            <td>活動起迄日</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="twotwotwo">
+
+                            <div class="processingFormcard">
+
+                                <div class="dataForm">
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">活動類別：</span>
+                                        <span class="form-body">通路經營</span>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">行銷項目：</span>
+                                        <span class="form-body">
+                                            <u>支付業務/信用卡/銀行卡(3)</u>、
+                                            <u>支付業務/信用卡/銀行卡(3)</u>
+                                        </span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">目標客群：</span>
+                                        <span class="form-body">醫師, 世界卡</span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">執行區域：</span>
+                                        <span class="form-body">台灣/北部/台北市, 新北市</span>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <span class=" form-titWidth">
+                                            常態性活動註記：
+                                        </span>
+                                        <span class="form-body">
+                                            每月｜提醒日期：2018/04/23
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="processingFormcard">
+                                <h3>推廣方式</h3>
+                                <div class="dataForm">
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">數位推廣：</span>
+                                        <span class="form-body">官網、EDM、SMS、社群行銷(Line, Facebook 等)</span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">實體文宣：</span>
+                                        <span class="form-body">帳單/玉山緣</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="processingFormcard">
+                                <h3>特殊註記</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>特殊註記項目</th>
+                                        <th>提醒日期</th>
+                                        <th>備註</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名銷名單行銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名單行銷銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3>贈品項目</h3>
+                                <span class="tag blue">有贈品或抽獎活動</span>
+                                <div class="dataForm">
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">贈品說明：</span>
+                                        <span class="form-body">喵喵杯 100 個、喵喵餐具 500 組</span>
+                                    </div>
+                                </div>
+                                <h3>合作廠商資訊</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>合作廠商統編</th>
+                                        <th>合作廠商名稱</th>
+                                        <th>是否為利害關係人</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名銷名單行銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <div class="dataForm flex">
+                                                    <div class="form-group ">
+                                                        <span class=" form-titWidth">擬提董事會決議：</span>
+                                                        <span class="form-body">是</span>
+                                                    </div>
+                                                    <span class="borderRight"></span>
+                                                    <div class="form-group ">
+                                                        <span class=" form-titWidth">擬提董事會決議：</span>
+                                                        <span class="form-body">是</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="processingFormcard">
+                                <h3>歷史行銷資訊</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>活動代碼</th>
+                                        <th>活動名稱</th>
+
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                C002457189655
+                                            </td>
+                                            <td>
+                                                <u>2017 報稅整合行銷活動-玉山金彩稅月</u>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="threethreethree">
+
+
+                            <div class="processingFormcard">
+                                <h3>活動預算</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>費用說明</th>
+                                        <th class="textRight">金額</th>
+                                        <th>費用項目</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td class="textRight">
+                                                90元
+
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td class="textRight">
+                                                90元
+
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr class="active">
+                                            <td></td>
+                                            <td></td>
+                                            <td class="textRight">
+                                                <strong>總計</strong>9000元
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                            <div class="processingFormcard">
+
+                                <h3>分攤設定</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>合作廠商統編</th>
+                                        <th>合作廠商名稱</th>
+                                        <th>是否為利害關係人</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名銷名單行銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名銷名單行銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="processingFormcard">
+                                <h3>單位預估總支出</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>項次</th>
+                                        <th>費用說明</th>
+                                        <th class="textRight">金額</th>
+                                        <th>費用項目</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td class="textRight">
+                                                90元
+
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td class="textRight">
+                                                90元
+
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr class="active">
+                                            <td></td>
+                                            <td></td>
+                                            <td class="textRight">
+                                                <strong>總計</strong>9000元
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                            <div class="processingFormcard">
+
+                                <h3>預估關鍵績效指標 (KPI) 及達成說明</h3>
+                                <table class="table greentable">
+                                    <thead>
+                                        <th>合作廠商統編</th>
+                                        <th>合作廠商名稱</th>
+                                        <th>是否為利害關係人</th>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名銷名單行銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷
+                                            </td>
+                                            <td>
+                                                名單行銷名銷名單行銷名單行銷名單行銷
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="forfor">
+                            <div class="processingFormcard">
+                                <div class="dataForm">
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">決行層級：</span>
+                                        <span class="form-body">一層決行(層峰主管)</span>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">設定層峰主管：</span>
+                                        <span class="form-body">總經理</span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">陳核會簽設定：</span>
+                                        <span class="form-body">設定加會</span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <span class=" form-titWidth">加會單位部處：</span>
+                                        <span class="form-body">法人金融事業處、CRV 小組</span>
+                                    </div>
+                                    <span class="tag blue redText ">有密件｜解密條件：活動開始後解密</span>
+                                    <span class="tag blue redText">有實體文</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 銷案 -->
+            <div class="modal fade" id="DeletList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 class="modal-title" id="myModalLabel">銷案</h2>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                            <hr />
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">銷案說明
+
+                                        <span class="Textnum">(0/100)</span>
+                                    </span>
+
+                                    <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">簽核附件
+
+
+                                    </span>
+
+                                    <a href="#" class="greenLink">
+                                        <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal">銷案</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 傳至原單位經辦 -->
+            <div class="modal fade" id="backTo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 class="modal-title" id="myModalLabel">傳至原單位經辦</h2>
+                        </div>
+                        <div class="modal-body">
+
+                            <h5>是否將文件傳至原單位經辦？</h5>
+                            <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                            <hr />
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">簽核意見
+
+                                        <span class="Textnum">(0/100)</span>
+                                    </span>
+
+                                    <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">簽核附件
+
+
+                                    </span>
+
+                                    <a href="#" class="greenLink">
+                                        <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal">確定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 處理權移轉 -->
+            <div class="modal fade" id="tranList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 class="modal-title" id="myModalLabel">處理權移轉</h2>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                            <hr />
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-6 nopadding">
+                                    <span class="formLabel">簽核角色
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                                </div>
+                                <div class="form-group col-xs-6 noRightpadding">
+                                    <span class="formLabel">簽核人員
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">銷案說明
+
+                                        <span class="Textnum">(0/100)</span>
+                                    </span>
+
+                                    <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">簽核附件
+
+
+                                    </span>
+
+                                    <a href="#" class="greenLink">
+                                        <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal">確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 傳送審核人員 -->
+            <div class="modal fade" id="tranpeopleList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 class="modal-title" id="myModalLabel">傳送審核人員</h2>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                            <hr />
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-6 nopadding">
+                                    <span class="formLabel">簽核角色
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                                </div>
+                                <div class="form-group col-xs-6 noRightpadding">
+                                    <span class="formLabel">簽核人員
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">銷案說明
+
+                                        <span class="Textnum">(0/100)</span>
+                                    </span>
+
+                                    <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">簽核附件
+
+
+                                    </span>
+
+                                    <a href="#" class="greenLink">
+                                        <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal">確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 傳送決行主管 -->
+            <div class="modal fade" id="tranMainpeopleList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 class="modal-title" id="myModalLabel">傳送決行主管</h2>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <h3>2018 報稅整合行銷活動-玉山金彩稅月</h3>
+
+
+                            <hr />
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-6 nopadding">
+                                    <span class="formLabel">簽核角色
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                                </div>
+                                <div class="form-group col-xs-6 noRightpadding">
+                                    <span class="formLabel">簽核人員
+                                        <span class="redText">*</span>
+                                    </span>
+                                    <input type="text" class="form-control inputStyle" placeholder="請輸入...">
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">銷案說明
+
+                                        <span class="Textnum">(0/100)</span>
+                                    </span>
+
+                                    <textarea type="text" class="form-control inputStyle" rows="4" placeholder="請輸入（最多500字）..."></textarea>
+                                </div>
+                            </div>
+                            <div class="row nomargin">
+                                <div class="form-group col-xs-12 nopadding">
+                                    <span class="formLabel">簽核附件
+
+
+                                    </span>
+
+                                    <a href="#" class="greenLink">
+                                        <i class="glyphicon glyphicon-plus"></i>上傳檔案</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal">確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $("#sidebar").mCustomScrollbar({
+                        theme: "minimal-dark"
+                    });
+                    $(".panel-body.processing").mCustomScrollbar({
+                        theme: "minimal-dark"
+                    });
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar, #content').toggleClass('active');
+
+                    });
+
+                    // 固定header 
+                    var height = $('.panelHeading').outerHeight();
+                    $('.panel-body').css('margin-top', height + 0 + 'px');
+                    $('.panel-body').css('height',
+                        '100vh').css('height', `-=${height + 0 + 60}px`);
+                    $(window).on('resize', function () {
+                        var height = $('.panelHeading').outerHeight();
+                        $('.panel-body').css('margin-top', height + 5 + 'px');
+                        $('.panel-body').css('height', '100vh').css('height',
+                            `-=${height + 5 + 60 }px`);
+                    })
+                });
+            </script>
+</body>
+
+</html>

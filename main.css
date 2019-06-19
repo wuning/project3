@@ -1,0 +1,1204 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./Open_Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('./NotoSans-unhinted/NotoSans-Regular.ttf');
+}
+
+* {
+    font-family: 'Noto Sans', '微軟正黑體', 'Open Sans';
+    box-sizing: border-box;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+.btn,
+a {
+    font-size: 15px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+    outline: none;
+}
+
+:focus,
+.form-control:focus,
+.btn:focus,
+.btn:active,
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open>.dropdown-toggle.btn-default.focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover,
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open>.dropdown-toggle.btn-default.focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: 1px solid transparent;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+}
+
+/* 字型 */
+
+span,
+p {
+    font-size: 15px;
+}
+
+:root {
+    font-size: 15px;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.4;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+h5,
+h6 {
+    font-weight: 400;
+}
+
+/* // Main heading for a page - 24px // */
+
+h1 {
+    font-size: 1.6rem;
+}
+
+/* // Subpage title - 21px // */
+
+h2 {
+    font-size: 1.4rem;
+}
+
+/* // Section heading - 18px // */
+
+h3 {
+    font-size: 1.2rem;
+}
+
+/* // Bold body content or form labels - 15px // */
+
+h4 {
+    font-size: 1rem;
+}
+
+/* // Body content/copy - 15px // */
+
+h5 {
+    font-size: 1rem;
+}
+
+/* // Meta content - 13.5px // */
+
+h6 {
+    font-size: 0.9rem;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    background: #00AD95;
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 60px;
+    margin: 0;
+}
+
+.navbar-header {
+    display: flex;
+}
+
+.navbar-header .form-control::-webkit-input-placeholder {
+    color: white;
+}
+
+/* WebKit, Blink, Edge */
+
+.navbar-header .form-control:-moz-placeholder {
+    color: white;
+}
+
+/* Mozilla Firefox 4 to 18 */
+
+.navbar-header .form-control::-moz-placeholder {
+    color: white;
+}
+
+/* Mozilla Firefox 19+ */
+
+.navbar-header .form-control:-ms-input-placeholder {
+    color: white;
+}
+
+/* Internet Explorer 10-11 */
+
+.navbar-header .form-control::-ms-input-placeholder {
+    color: white;
+}
+
+/* Microsoft Edge */
+
+.navbar-header .logo {
+    margin: 0 10px 0 10px;
+}
+
+.navbar-header .logo span {
+    color: #fff;
+    font-size: 15px;
+    margin: 0 0 0 10px;
+    line-height: 40px;
+}
+
+.navbar-btn {
+    background-color: #00AD95;
+    color: #fff;
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+    color: #7F7F7F;
+}
+
+/* add padding  */
+
+.left-addon input {
+    padding-left: 30px;
+    background-color: rgba(255, 255, 255, 0.35);
+    height: 40px;
+    width: 300px;
+    border-radius: 3px;
+    border: none;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.navbar-header .left-addon input {
+    background-color: rgba(255, 255, 255, 0.35);
+    height: 40px;
+    width: 300px;
+    border-radius: 3px;
+    border: none;
+    padding-left: 38px;
+}
+
+.navbar-header .left-addon input:focus {
+    box-shadow: 0 0 0px 1px #7f7f7f;
+}
+
+.navbar-header .left-addon .glyphicon {
+    color: #fff;
+    font-size: 20px;
+    left: -2px;
+    top: 0px;
+}
+
+/* ---------------------------------------------------
+    BIGCONTENT STYLE
+----------------------------------------------------- */
+
+.data {
+    overflow-y: scroll;
+    height: auto;
+}
+
+body {
+    overflow: hidden;
+}
+
+#content {
+    width: calc(100% - 180px);
+    transition: all 0.3s;
+    position: absolute;
+    right: 0;
+    height: auto;
+    /* overflow: scroll; */
+    top: 60px;
+}
+
+#content.active {
+    width: 100%;
+}
+
+.main-content {
+    min-width: 1024px;
+}
+
+.datepicker.form-control[disabled],
+.datepicker.form-control[readonly],
+fieldset[disabled] .datepicker.form-control {
+    background-color: #F5F7FA;
+}
+
+/* ---------------------------------------------------------------------------------
+   tab STYLE
+------------------------------------------------------------------------------------*/
+
+.borderTop {
+    border-top: solid 1px #AAAAAA;
+}
+
+.greenTab {
+    border-bottom: none;
+    /* border-top: solid 1px #AAAAAA; */
+    padding-left: 20px;
+}
+
+.greenTab>li>a,
+.greenTab>li>a:hover {
+    border: none;
+    background-color: transparent;
+}
+
+.greenTab>li {
+    padding: 10px 15px 0px 0px;
+}
+
+.greenTab>li>a {
+    padding: 3px;
+}
+
+.btn>h3 {
+    display: inline-block;
+}
+
+.dataHead .dropdown {
+    display: inline-block;
+}
+
+.sortingBtn {
+    display: inline-block;
+}
+
+.sortingBtn span {
+    color: #7F7F7F;
+}
+
+.sortingBtn .btn {
+    padding: 0;
+    margin-bottom: 3px;
+}
+
+/* .greenTab>li.active>a:focus,
+.greenTab>li>a:focus,
+    {
+    border: none;
+    border-bottom: solid 6px #00AD95;
+    background-color: transparent;
+} */
+
+.greenTab>li.active>a,
+.greenTab>li.active>a:focus,
+.greenTab>li.active>a:hover {
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 6px #00AD95;
+    border-radius: 0;
+    color: #00AD95;
+    padding: 3px;
+}
+
+/* ---------------------------------------------------------------------------------
+    CONTENT STYLE
+------------------------------------------------------------------------------------*/
+
+.searchForm {
+    margin-left: 0;
+    /* margin-top: 25px; */
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+.panel .panelHeading {
+    padding: 15px 15px 0 20px;
+}
+
+/* 
+.panel-body {
+    padding: 30px 0px 0 0px;
+} */
+
+.panel.panel-default {
+    padding: 0 15px;
+    border-color: #fff;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.panel .panelHeading .panel-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.modal-body .form-group {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formLabel {
+    padding-bottom: 5px;
+    display: block;
+}
+
+.cardFormHead {
+    color: #fff;
+    background-color: #206060;
+    height: 34px;
+    display: block;
+    line-height: 34px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+i {
+    padding: 0 5px 0 0;
+}
+
+.modal-header {
+    border: none;
+    padding: 40px 40px 0 40px;
+}
+
+.redText {
+    color: #F24747;
+}
+
+.yellowText {
+    color: #F6A43F;
+}
+
+.glyphicon-time.yellowText {
+    font-size: 20px;
+    top: 3px;
+    left: 3px;
+}
+
+.modal-header .close {
+    font-size: 40px;
+}
+
+.modal-body {
+    padding: 30px 40px;
+}
+
+.blueText {
+    color: #3498DB !important;
+}
+
+.modal-body .dl-horizontal .DDspace,
+.panel-body .dl-horizontal .DDspace {
+    margin-top: 10px;
+    display: inherit;
+}
+
+.modal-body .dl-horizontal dt {
+    text-align: left;
+    color: #7f7f7f;
+    width: 92px;
+    font-weight: normal;
+}
+
+.modal-body .dl-horizontal dd,
+.panel-body .dl-horizontal dd {
+    margin: 0;
+    font-size: 15px;
+}
+
+.modal-body .form-titWidth {
+    width: 90px;
+}
+
+.modal-body .form-body {
+    width: 80%;
+}
+
+.modal-body .table th {
+    color: #7F7F7F;
+}
+
+.modal-body .table th,
+.modal-body .table td {
+    border: none;
+}
+
+.no-gutter>[class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.noLeftpadding {
+    padding-left: 0 !important;
+}
+
+.noRightpadding {
+    padding-right: 0 !important;
+}
+
+.inputStyle {
+    height: 40px;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #F5F7FA;
+    border: none;
+    box-shadow: none;
+}
+
+.inputStyle:focus {
+    box-shadow: 0 0 0px 1px #7f7f7f;
+}
+
+.oneForm {
+    margin-top: 25px;
+}
+
+.modal-body .row {
+    margin-top: 20px;
+}
+
+.modal-footer {
+    border: none;
+    padding: 0px 40px 40px 40px;
+}
+
+.float-right {
+    float: right;
+}
+
+.shadow {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.panel-body .input-group .input-group-addon {
+    background-color: #F5F7FA;
+    border: none;
+    color: #7F7F7F;
+}
+
+.Formcard {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.Formcard hr {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.Formcard.checkList {
+    margin-bottom: 5px;
+}
+
+/* 
+.Processpanel.fillform .panelHeading {
+    height: 220px;
+} */
+
+.headingForm {
+    padding-left: 88px;
+    padding-top: 30px;
+}
+
+.Processpanel .greentable th {
+    background-color: #206060;
+    color: #fff;
+    font-weight: normal;
+    border-bottom: none;
+}
+
+.processing.panel-body .list-group-item {
+    border: none;
+    padding: 5px 0;
+}
+
+.processing.panel-body .panel-heading .greenLink {
+    margin-left: 10px;
+}
+
+.processing.panel-body .list-group-item::before {
+    content: '';
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: #AAAAAA;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.tag.process.green {
+    height: 24px;
+    width: 116px;
+    border-radius: 3px;
+    background-color: #72BF24;
+    font-size: 13px;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px;
+}
+
+.tag.process.orange {
+    height: 24px;
+    width: 116px;
+    border-radius: 3px;
+    background-color: #F78436;
+    font-size: 13px;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px;
+}
+
+.row.nomargin .greenLink {
+    margin-bottom: 10px;
+}
+
+/* 確認表單 表單頁表格 dataForm*/
+
+/* .form-tit {
+    color: #7f7f7f;
+    vertical-align: top;
+} */
+
+.form-titWidth {
+    color: #7f7f7f;
+    /* width: 120px; */
+    overflow-x: hidden;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    max-width: 120px;
+    min-width: 105px;
+}
+
+.form-body {
+    color: #333;
+    max-width: 80%;
+    overflow-x: hidden;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+}
+
+/* .dataForm {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.dataForm .form-group {
+    display: block;
+} */
+
+/* .dataForm .form-group.row {
+    margin: 0;
+    margin-bottom: 5px;
+} */
+
+.flex {
+    display: flex;
+}
+
+.dataForm.flex .form-group {
+    margin-right: 40px;
+}
+
+/* ---------------------------------------------------
+  按鈕
+----------------------------------------------------- */
+
+:focus {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.btn-sm:active {
+    box-shadow: none;
+    outline: none;
+}
+
+.btn {
+    height: 40px;
+    background-color: transparent;
+}
+
+.btn.float-left,
+.btn.float-left:active,
+.btn.float-left:focus,
+.btn.float-left:hover,
+.btn.float-left:hover:active {
+    margin: 0;
+}
+
+.btn-search.disable {
+    height: 40px;
+    width: 74px;
+    opacity: 0.4;
+    border-radius: 3px;
+    background-color: #00AD95;
+    color: #fff;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.btn-search {
+    height: 40px;
+    width: 74px;
+    border-radius: 3px;
+    background-color: #00AD95;
+    color: #fff;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.btn-search:hover,
+.btn-search:active,
+.btn-search:focus {
+    height: 40px;
+    width: 74px;
+    border-radius: 3px;
+    background-color: #007075;
+    color: #fff;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.btn-outline-primary {
+    color: #00AD95;
+    background-color: transparent;
+    background-image: none;
+    margin-left: 5px;
+    border: solid 1px #00AD95;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    color: #007075;
+    background-color: transparent;
+    background-image: none;
+    margin-left: 5px;
+    border: solid 2px #007075;
+}
+
+.btn-primary {
+    height: 40px;
+    border-radius: 3px;
+    background-color: #00AD95;
+    color: #fff;
+    border: none;
+    margin-left: 5px;
+}
+
+.btn-primary:hover,
+.btn-primary:hover:active,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus {
+    height: 40px;
+    border-radius: 3px;
+    background-color: #007075;
+    color: #fff;
+    border: none;
+}
+
+.btn-default {
+    border: 1px solid #AAAAAA;
+    border-radius: 3px;
+    background-color: #F5F7FA;
+    margin-left: 5px;
+}
+
+.btn-default:hover,
+.btn-default:active,
+.btn-default:focus,
+.btn-default:active:focus {
+    border: 1px solid #AAAAAA;
+    border-radius: 3px;
+    background-color: #eaeaea;
+    margin-left: 5px;
+}
+
+.btn-danger {
+    border-radius: 3px;
+    background-color: #FF6550;
+    margin-left: 5px;
+    border: none;
+}
+
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+    border-radius: 3px;
+    background-color: #E91F00;
+    margin-left: 5px;
+    border: none;
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn,
+.btn-sm.disabled,
+.btn-sm[disabled],
+fieldset[disabled] .btn-sm {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btnWarp {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+.borderRight {
+    border-right: solid 1px #aaa;
+    margin: 0 20px;
+    height: 20px;
+    width: 1px;
+}
+
+#content .Processpanel .panelHeading {
+    width: calc(100% - 180px);
+}
+
+#content.active .Processpanel .panelHeading {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+  流程
+----------------------------------------------------- */
+
+.fileForm {
+    padding: 0 20px 0 0px;
+}
+
+.searchFormHead {
+    padding: 15px 20px 15px 20px;
+}
+
+.dataHead {
+    padding: 15px;
+}
+
+.dataHead.bgBlue {
+    padding: 5px 0px 5px 0px;
+}
+
+.panel-title.largTit {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Processpanel .panelHeading {
+    background-color: #fff;
+    height: auto;
+    /* padding: 15px 20px 15px 20px; */
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.Processpanel .panel-body {
+    padding: 0;
+}
+
+.Processpanel .panel-body .title {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+
+.Processpanel .panel-body .title h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    flex: 0 0 100%;
+    margin-top: 30px;
+}
+
+/* 新增產品 panel-body processing*/
+
+.processingFormcard {
+    background-color: #fff;
+    padding: 38px 86px 20px 104px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 5px 10px 10px 10px;
+}
+
+.processingFormcard {
+    padding-bottom: 0;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.processing.panel-body .panel-default,
+.panel-group .panel-heading+.panel-collapse>.list-group,
+.panel-group .panel-heading+.panel-collapse>.panel-body {
+    border: none;
+}
+
+.processing.panel-body .panel-default>.panel-heading {
+    background-color: #fff;
+    padding: 0;
+    border: none;
+}
+
+.processing.panel-body .panel {
+    box-shadow: none;
+}
+
+.modal-body h3,
+.processing.panel-body h3 {
+    margin-bottom: 20px;
+}
+
+.processing.panel-body h2 {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.closeTop {
+    font-size: 15px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.headForm .form-group {
+    margin-bottom: 5px;
+}
+
+.statusBarWarp {
+    flex: 0 0 100%;
+    display: inline-block;
+    margin-bottom: 77px;
+}
+
+.statusBar.working li {
+    background-color: #00AD95;
+}
+
+.statusBar.working .statusChecked .statusBar-dot {
+    background-color: #00AD95;
+    color: #fff;
+    padding: 2px 0 0 4px;
+}
+
+.statusBar {
+    list-style: none;
+    display: inline-block;
+    margin: auto;
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.statusBar li {
+    float: left;
+    height: 4px;
+    width: 200px;
+    background-color: #AAAAAA;
+}
+
+.statusBar li:last-child {
+    width: 0;
+}
+
+.statusBar li:last-child .statusBar-dot {
+    position: relative;
+    left: 0;
+}
+
+.statusBar .noStatus .statusBar-dot {
+    height: 16px;
+    width: 16px;
+    border: 4px solid #AAAAAA;
+    background-color: #F5F7FA;
+    margin-top: 6px;
+}
+
+.statusBar .noStatus p {
+    color: #aaa;
+    margin-top: 9px;
+}
+
+.statusBar li:last-child p {
+    left: -84px;
+}
+
+.statusBar li .statusBar-dot {
+    height: 30px;
+    width: 30px;
+    border: 4px solid #00AD95;
+    background-color: #F5F7FA;
+    display: block;
+    border-radius: 30px;
+    position: relative;
+    top: -13px;
+    left: -29px;
+}
+
+.statusBar li p {
+    position: relative;
+    left: -110px;
+    text-align: center;
+    color: #00AD95;
+    width: 200px;
+}
+
+.Textnum {
+    float: right;
+    color: #7F7F7F;
+}
+
+.redText {
+    color: #E74D3D;
+}
+
+.Nodata {
+    text-align: center;
+    padding-top: 90px;
+}
+
+.Nodata h5 {
+    color: #666666;
+    margin: 10px 0;
+}
+
+.greenLink {
+    color: #00AD95;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.greenLink:hover,
+.greenLink:focus,
+.greenLink:active {
+    color: #00AD95;
+}
+
+.float-left {
+    float: left;
+}
+
+.deletInTable {
+    vertical-align: middle !important;
+}
+
+/* not required css */
+
+.panel .row {
+    padding: 0;
+}
+
+.panel-body.processing {
+    background-color: #F5F7FA;
+    overflow-y: scroll;
+}
+
+/* ---------------------------------------------------
+  箭頭tab
+----------------------------------------------------- */
+
+.processTab {
+    border-bottom: none;
+}
+
+.processTab>.tabContent>.processTab>.tabContent> {
+    border: none;
+    background-color: transparent;
+    padding: 10px 8px 10px 40px;
+}
+
+.processTab>.tabContent.active>a,
+.processTab>.tabContent.active>a:focus,
+.processTab>.tabContent.active>a:hover {
+    background-color: transparent;
+    background-color: #007075;
+    border-radius: 0;
+    color: #fff;
+    border: none;
+    padding: 10px 8px 10px 40px;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    border-color: #fff;
+    background-color: transparent;
+    border: none;
+}
+
+.nav-tabs>li>a {
+    border: none;
+}
+
+.processTab>.tabContent>a {
+    padding: 10px 30px;
+}
+
+.processTab>.tabContent.active .processTabHead {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0px 20px 20px;
+    border-color: transparent transparent transparent #007075;
+    position: absolute;
+    right: -18px;
+    top: 0;
+    display: block;
+}
+
+.processTab>.tabContent.active>a::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0px 20px 20px;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    left: -2px;
+    top: 0;
+}
+
+.checkboxContent {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.checkboxContent .form-group {
+    margin-bottom: 0;
+}
+
+.checkboxContent .form-titWidth {
+    min-width: 40px;
+}
+
+.checkboxContent .form-body {
+    max-width: 100%;
+}
+
+.Formcard.checkList input {
+    position: relative;
+    bottom: 10px;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    #sidebar {
+        margin-left: -180px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 180px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+    #content.active .Processpanel .panelHeading {
+        width: calc(100% - 180px);
+    }
+    #content .Processpanel .panelHeading {
+        width: 100%;
+    }
+}
